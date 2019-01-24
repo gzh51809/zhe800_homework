@@ -1,0 +1,17 @@
+.Carousel {
+  height: 274px; }
+  .Carousel > div {
+    touch-action: pan-x;
+    height: 274px; }
+  .Carousel .member, .Carousel img {
+    display: block;
+    width: 100%;
+    height: 274px;
+    object-fit: cover; }
+  .Carousel .active {
+    opacity: 0.5; }
+
+.hiddenCargousel {
+  display: none; }
+
+/*# sourceMappingURL=Carousel.css.map */

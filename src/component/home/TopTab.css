@@ -1,0 +1,36 @@
+.TobTab {
+  display: flex;
+  background: #FFF; }
+  .TobTab .tabWrapper {
+    display: flex;
+    background: #FFF; }
+  .TobTab .tab {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    color: #6a6969;
+    background: #FFF;
+    height: 60px;
+    font-size: 30px;
+    line-height: 60px;
+    border-bottom: 5px solid transparent; }
+  .TobTab .select {
+    color: #e30c26;
+    border-bottom: 5px solid #e30c26; }
+  .TobTab .active {
+    color: #e30c26; }
+  .TobTab > .more {
+    display: flex;
+    border-left: 2px solid #EEE;
+    margin: 5px 0;
+    width: 65px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px; }
+  .TobTab > .moreActive {
+    opacity: 0.5; }
+
+/*# sourceMappingURL=TopTab.css.map */

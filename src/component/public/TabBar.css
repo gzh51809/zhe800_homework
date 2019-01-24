@@ -1,0 +1,24 @@
+.TabBar {
+  display: flex;
+  height: 90px;
+  background: white;
+  border-top: 2px solid #D8D8D8; }
+  .TabBar > div {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    color: gray; }
+    .TabBar > div > i {
+      font-size: 42px;
+      text-align: center;
+      line-height: 42px;
+      margin-bottom: 10px; }
+    .TabBar > div > span {
+      font-size: 22px;
+      line-height: 22px; }
+  .TabBar > div.select {
+    color: #E30C26; }
+
+/*# sourceMappingURL=TabBar.css.map */

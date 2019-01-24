@@ -1,0 +1,35 @@
+.SearchBar {
+  display: flex;
+  align-items: center;
+  background: #FFF;
+  padding: 20px; }
+  .SearchBar > i.icon {
+    display: block;
+    width: 112px;
+    height: 48px;
+    background: #FFF url("../../image/search_icon.png") no-repeat center/contain; }
+  .SearchBar > div.search {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #efeded;
+    height: 48px;
+    border-radius: 48px;
+    margin: 0 20px; }
+    .SearchBar > div.search > i {
+      color: #ff565c;
+      font-size: 26px;
+      margin: 0 10px; }
+    .SearchBar > div.search > p {
+      color: #c1c1c1;
+      font-size: 26px; }
+  .SearchBar > i.searchKind {
+    font-size: 45px;
+    margin: 0 34px;
+    color: gray; }
+
+.SearchBarActive {
+  opacity: 0.5; }
+
+/*# sourceMappingURL=SearchBar.css.map */

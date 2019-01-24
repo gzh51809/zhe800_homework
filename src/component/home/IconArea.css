@@ -1,0 +1,25 @@
+.IconArea {
+  display: flex;
+  flex-flow: row wrap;
+  background: #FFF; }
+  .IconArea .icon {
+    box-sizing: border-box;
+    width: 25%;
+    padding: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center; }
+    .IconArea .icon > img {
+      border-radius: 100%;
+      display: block;
+      width: 80%;
+      object-fit: contain;
+      margin-bottom: 20px; }
+    .IconArea .icon > p {
+      color: #333;
+      font-size: 28px; }
+  .IconArea .activeIcon {
+    opacity: 0.5; }
+
+/*# sourceMappingURL=IconArea.css.map */

@@ -1,0 +1,11 @@
+.horizontal {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; }
+
+.vertical {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; }
+
+/*# sourceMappingURL=ScrollContainer.css.map */

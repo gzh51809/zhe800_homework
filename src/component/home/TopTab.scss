@@ -1,0 +1,47 @@
+.TobTab {
+  display: flex;
+  background: #FFF;
+
+  .tabWrapper {
+    display: flex;
+    background: #FFF;
+  }
+
+  .tab {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    color: #6a6969;
+    background: #FFF;
+    height: 60px;
+    font-size: 30px;
+    line-height: 60px;
+    border-bottom: 5px solid transparent;
+  }
+
+  .select {
+    color: #e30c26;
+    border-bottom: 5px solid #e30c26;
+  }
+
+  .active {
+    color: #e30c26;
+  }
+
+  > .more {
+    display: flex;
+    border-left: 2px solid #EEE;
+    margin: 5px 0;
+    width: 65px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+  }
+
+  > .moreActive{
+    opacity: 0.5;
+  }
+}

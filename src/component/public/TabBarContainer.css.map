@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,gBAAgB;EACd,OAAO,EAAE,IAAI;EACb,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,aAAa;EACxB,iCAAe;IACb,IAAI,EAAE,CAAC",
+"sources": ["TabBarContainer.scss"],
+"names": [],
+"file": "TabBarContainer.css"
+}

@@ -1,0 +1,11 @@
+{
+  "server": {
+    "port": "8000",
+    "log": "server is running on http://127.0.0.1:8000 open the link enter into Server Manage System"
+  },
+  "mongoDb": {
+    "host": "127.0.0.1",
+    "port": "27017",
+    "dbName": "zhe800"
+  }
+}
