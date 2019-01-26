@@ -1,4 +1,5 @@
 import {requestKind as apiRequestKind} from '../api';
+import {requestGoodList as apiRequestGoodList } from '../api';
 
 //-------------------异步接口动作-请求-返回-------------------
 const requestKind = () => dispatch => apiRequestKind().then(
@@ -13,7 +14,18 @@ const requestKind = () => dispatch => apiRequestKind().then(
     () => dispatch({type: responseKind, payload: []})
 );                                          //请求首页轮播图、tab、icon数据
 const responseKind = 'HOME_QUERY_KIND';     //返回首页轮播图、tab、icon数据
-const responseAd = 'HOME_QUERY_AD';         //返回广告区数据
+
+const requestList = (data) => dispatch => apiRequestGoodList(data).then(
+    response => {
+        if (response.data.code === '0') {
+            dispatch({type: responseList, payload: response.data.list});
+        } else {
+            dispatch({type: responseList, payload: []});
+        }
+    }
+).catch(
+    () => dispatch({type: responseList, payload: []})
+);
 const responseList = 'HOME_QUERY_LIST';     //返回列表数据
 
 //--------------------同步动作-用户交互--------------------
@@ -29,7 +41,7 @@ const clickGood = 'HOME_CLICK_GOOD';        //点击进入商品详情页
 export {
     requestKind,
     responseKind,
-    responseAd,
+    requestList,
     responseList,
 
     downloadApp,

@@ -9,7 +9,8 @@ import style from './ScrollContainer.scss';
 class ScrollContainer extends Component {
     render() {
         return (
-            <div className={classNames(this.props.direction === 'horizontal' ? style.horizontal : style.vertical, this.props.className)}>
+            <div className={classNames(this.props.direction === 'horizontal' ? style.horizontal : style.vertical, this.props.className)}
+                 onScroll={this.props.scroll}>
                 {this.props.children}
             </div>
         );
@@ -17,11 +18,13 @@ class ScrollContainer extends Component {
 }
 
 ScrollContainer.propTypes = {
-    direction: PropTypes.oneOf(['horizontal', 'vertical'])
+    direction: PropTypes.oneOf(['horizontal', 'vertical']),
+    scroll: PropTypes.func
 };
 
 ScrollContainer.defaultProps = {
-    direction: 'vertical'
+    direction: 'vertical',
+    scroll: (() => {})
 };
 
 export default ScrollContainer;

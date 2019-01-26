@@ -1,0 +1,9 @@
+.ListContainer {
+  display: flex;
+  flex-flow: row wrap;
+  background: #FFF;
+  padding: 20px 0 0 20px; }
+  .ListContainer > * {
+    width: 50%; }
+
+/*# sourceMappingURL=ListContainer.css.map */

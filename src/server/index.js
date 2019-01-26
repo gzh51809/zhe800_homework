@@ -4,6 +4,7 @@ const express = require('express');
 const {server:{port, log}} = require('./config');
 
 const requestKind = require('./requestKind');
+const requestKindGoodList = require('./requestKindGoodList');
 
 let app = express();
 //某些特殊端口如6000   Google报unsafe_port
@@ -25,3 +26,4 @@ app.use('/zhe800/', express.static('./src/server/asset'));
 
 //------------路由配置------------
 app.use('/zhe800/', requestKind);
+app.use('/zhe800/', requestKindGoodList);

@@ -83,6 +83,12 @@ body {
   visibility: visible;
 }
 
+.stickTop{
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+}
+
 .app {
   position: fixed;
   width: 100%;

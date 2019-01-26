@@ -17,7 +17,7 @@ class TopTab extends Component {
                           tab={() => this.props.clickTab(item)}
                           activeClass={style.active}
                           className={style.tab}>
-                    {item.tabName}
+                    {item.kindName}
                 </TouchBox>
             );
         });
@@ -28,7 +28,7 @@ class TopTab extends Component {
                 <TouchBox tagName={'p'}
                           tab={() => this.props.clickTab(this.props.leftTab)}
                           className={classNames(style.tab, style.select)}>
-                    {this.props.leftTab.tabName}
+                    {this.props.leftTab.kindName}
                 </TouchBox>
                 <ScrollContainer direction={'horizontal'}>
                     <div className={style.tabWrapper}>
@@ -46,19 +46,19 @@ class TopTab extends Component {
 
 TopTab.propTypes = {
     leftTab: PropTypes.shape({
-        tabId: PropTypes.string,
-        tabName: PropTypes.string
+        kindId: PropTypes.string,
+        kindName: PropTypes.string
     }),
     tabs: PropTypes.arrayOf(PropTypes.shape({
-        tabId: PropTypes.string,
-        tabName: PropTypes.string
+        kindId: PropTypes.string,
+        kindName: PropTypes.string
     })),
     clickTab: PropTypes.func,
 };
 
 TopTab.defaultProps = {
-    leftTab: {tabId: '-', tabName: '-'},
-    tabs: [{tabId: '-', tabName: '-'}],
+    leftTab: {kindId: '-', kindName: '-'},
+    tabs: [{kindId: '-', kindName: '-'}],
     clickTab: (() => {})
 };
 

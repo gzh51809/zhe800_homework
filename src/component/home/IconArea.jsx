@@ -38,8 +38,7 @@ IconArea.propTypes = {
 
 IconArea.defaultProps = {
     data: [],
-    clickIcon: (() => {
-    })
+    clickIcon: (() => {})
 };
 
 export default IconArea;

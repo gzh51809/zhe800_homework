@@ -31,9 +31,8 @@ TopBar.propTypes = {
     download: PropType.func
 };
 
-TopBar.defaultTypes = {
-    download: () => {
-    }
+TopBar.defaultProps = {
+    download: () => {}
 };
 
 export default TopBar;

@@ -62,6 +62,7 @@ class TouchBox extends Component {
             default:
                 element = (
                     <div className={this.state.theClass}
+                         style={this.props.style}
                          onTouchStart={this.touchStart}
                          onTouchMove={this.touchMove}
                          onTouchEnd={this.touchEnd}
@@ -73,6 +74,7 @@ class TouchBox extends Component {
             case 'p':
                 element = (
                     <p className={this.state.theClass}
+                       style={this.props.style}
                        onTouchStart={this.touchStart}
                        onTouchMove={this.touchMove}
                        onTouchEnd={this.touchEnd}
@@ -84,10 +86,11 @@ class TouchBox extends Component {
             case 'span':
                 element = (
                     <span className={this.state.theClass}
-                       onTouchStart={this.touchStart}
-                       onTouchMove={this.touchMove}
-                       onTouchEnd={this.touchEnd}
-                       onTouchCancel={this.touchCancel}>
+                          style={this.props.style}
+                          onTouchStart={this.touchStart}
+                          onTouchMove={this.touchMove}
+                          onTouchEnd={this.touchEnd}
+                          onTouchCancel={this.touchCancel}>
                         {this.props.children}
                     </span>
                 );

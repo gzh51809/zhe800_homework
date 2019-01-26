@@ -6,7 +6,7 @@
   .icon {
     box-sizing: border-box;
     width: 25%;
-    padding: 30px;
+    padding: 30px 20px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -25,7 +25,8 @@
       font-size: 28px;
     }
   }
-  .activeIcon{
+
+  .activeIcon {
     opacity: 0.5;
   }
 }
