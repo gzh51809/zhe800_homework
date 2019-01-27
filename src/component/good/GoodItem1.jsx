@@ -15,8 +15,7 @@ class GoodItem1 extends Component {
                       activeClass={style.active}
                       tab={() => this.props.clickItem(this.props.good)}>
                 <div style={{backgroundImage: `url('${this.props.good.fengmianSrc}')`}}>
-                    <span
-                        className={Boolean(this.props.good.fieldName) ? base.visible : base.hidden}>{this.props.good.fieldName}</span>
+                    <span className={Boolean(this.props.good.fieldName) ? base.visible : base.hidden}>{this.props.good.fieldName}</span>
                     <h2>{this.props.good.name}</h2>
                     <h3>{this.props.good.discount}</h3>
                 </div>

@@ -2,12 +2,15 @@ import React, {
     Component
 } from 'react';
 import {findDOMNode} from 'react-dom';
+import classNames from 'classnames';
 import {connect} from "react-redux";
 import base from '../scss/base.scss';
+import style from './Home.scss';
 
 import {
     TopBar,
     TabBarContainer,
+    ScrollToTop
 } from '../component/public';
 
 import {
@@ -26,15 +29,17 @@ class Home extends Component {
     constructor() {
         super();
         this.state = {
-            isSticky: false
+            isSticky: false,
+            needScrollToTop: false
         };
 
         this.scrollSticky = this.scrollSticky.bind(this);
+        this.scrollToTop = this.scrollToTop.bind(this);
+        this.timer = null;
     }
 
     componentWillMount() {
-        this.props.dispatch(action.requestKind());
-        this.props.dispatch(action.requestList({
+        this.props.dispatch(action.requestData({
             kindIds: [
                 'tuijian', 'nvzhuang', 'xiebao',
                 'jujia', 'muyinertong', 'meishi',
@@ -49,11 +54,29 @@ class Home extends Component {
         let scrollTop = Number(event.currentTarget.scrollTop);
         let listOffsetTop = Number(findDOMNode(this.refs.list).offsetTop);
         if (scrollTop > listOffsetTop && this.state.isSticky === false) {
-            this.setState({isSticky: true});
+            this.setState({
+                isSticky: true,
+                needScrollToTop: true
+            });
         } else if (scrollTop < listOffsetTop && this.state.isSticky === true) {
-            this.setState({isSticky: false});
+            this.setState({
+                isSticky: false,
+                needScrollToTop: false
+            });
         }
 
+    }
+
+    scrollToTop() {
+        let scrollContainer = findDOMNode(this.refs.tabbar.refs.scrollContainer);
+
+        clearInterval(this.timer);
+        this.timer = setInterval(() => {
+            scrollContainer.scrollTop = Math.max(scrollContainer.scrollTop - 50, 0);
+            if (scrollContainer.scrollTop === 0) {
+                clearInterval(this.timer);
+            }
+        }, 10);
     }
 
     render() {
@@ -67,8 +90,12 @@ class Home extends Component {
 
         return (
             <TabBarContainer tabId={'home'}
+                             ref={'tabbar'}
                              selectTab={item => this.props.history.push(item.id)}
                              scroll={this.scrollSticky}>
+                <div className={this.state.needScrollToTop ? classNames(style.scrollToTop, base.visible) : classNames(style.scrollToTop, base.hidden)}>
+                    <ScrollToTop clickAction={this.scrollToTop}/>
+                </div>
                 <TopBar download={() => this.props.dispatch({type: action.downloadApp})}/>
                 <SearchBar clickBar={() => this.props.history.push('/search')}/>
                 <div className={this.state.isSticky ? base.stickTop : null}>
@@ -99,6 +126,11 @@ class Home extends Component {
                 </ListContainer>
             </TabBarContainer>
         );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
+        this.timer = null;
     }
 }
 

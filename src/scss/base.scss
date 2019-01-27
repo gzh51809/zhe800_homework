@@ -46,6 +46,9 @@ a, s, i, em, del, strong, u, b {
 /********* 清除浮动 *********/
 body {
   background: #FFF;
+  -moz-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100% !important;
+  -webkit-text-size-adjust: 100% !important;
 }
 
 .clearFix {

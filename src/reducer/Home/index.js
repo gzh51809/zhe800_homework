@@ -1,5 +1,5 @@
 import {
-    responseKind,
+    responseData,
     responseList,
 
     downloadApp,
@@ -31,15 +31,15 @@ let defaultState = {
     currentList: []
 };
 
-//处理tab、轮播图、icon、广告之间的数据联动
-function handelKind(state, action) {
-    let data = action.payload;
+//处理tab、轮播图、icon、广告、列表之间的数据联动
+function handelData(state, action) {
+    let kindData = action.payload.kind || [];
     let cloneState = {...state};
 
-    cloneState.kindData = data;
+    cloneState.kindData = kindData;
 
     //tab数据分类
-    cloneState.topTapData = data.reduce((target, item) => {
+    cloneState.topTapData = kindData.reduce((target, item) => {
         if (!target.find(json => json.kindId === item.kindId)) {
             target.push({
                 kindId: item.kindId,
@@ -54,7 +54,7 @@ function handelKind(state, action) {
     cloneState.selectTab = cloneState.topTapData[0];
 
     //banner数据跟随tab联动
-    cloneState.bannerData = data.reduce((target, item) => {
+    cloneState.bannerData = kindData.reduce((target, item) => {
         if (!target.find(json => json.kindId === item.kindId && json.bannerId === item.bannerId)) {
             target.push({
                 kindId: item.kindId,
@@ -68,7 +68,7 @@ function handelKind(state, action) {
     cloneState.currentBanner = cloneState.bannerData.filter(item => item.kindId === cloneState.selectTab.kindId);
 
     //icon数据跟随tab联动
-    cloneState.iconData = data.reduce((target, item) => {
+    cloneState.iconData = kindData.reduce((target, item) => {
         if (!target.find(json => json.kindId === item.kindId && json.iconId === item.iconId)) {
             target.push({
                 kindId: item.kindId,
@@ -83,7 +83,7 @@ function handelKind(state, action) {
     cloneState.currentIcon = cloneState.iconData.filter(item => item.kindId === cloneState.selectTab.kindId);
 
     //下面的gif广告区跟随tab联动
-    cloneState.adData = data.reduce((target, item) => {
+    cloneState.adData = kindData.reduce((target, item) => {
         if (!target.find(json => json.kindId === item.kindId)) {
             target.push({
                 kindId: item.kindId,
@@ -103,6 +103,20 @@ function handelKind(state, action) {
         return target;
     }, []);
     cloneState.currentAd = cloneState.adData.filter(item => item.kindId === cloneState.selectTab.kindId)[0];
+
+    //处理列表数据
+    let listData = action.payload.list || [];
+    cloneState.listData = cloneState.listData.concat(listData.map(item => {
+        let clone = {...item};
+        clone.fengmianSrc = `http://${location.hostname}:${apiConfig.serverPort}/zhe800${item.fengmianSrc}`;
+
+        return clone;
+    }));
+
+    //除重
+    let idArray = [...new Set(cloneState.listData.map(item => item._id))];
+    cloneState.listData = idArray.map(id => cloneState.listData.find(item => item._id === id));
+    cloneState.currentList = cloneState.listData.filter(item => item.kindId === cloneState.selectTab.kindId);
 
     return cloneState;
 }
@@ -129,8 +143,8 @@ function handelList(state, action) {
 
 export default (state = defaultState, action) => {
     switch (action.type) {
-        case responseKind:
-            return handelKind(state, action);
+        case responseData:
+            return handelData(state, action);
         case responseList:
             return handelList(state, action);
 

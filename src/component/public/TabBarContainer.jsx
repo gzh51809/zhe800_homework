@@ -12,7 +12,8 @@ class TabBarContainer extends Component {
     render() {
         return (
             <div className={style.TabBarContainer}>
-                <ScrollContainer className={style.scrollWrapper}
+                <ScrollContainer ref={'scrollContainer'}
+                                 className={style.scrollWrapper}
                                  scroll={this.props.scroll}>
                     {this.props.children}
                 </ScrollContainer>
@@ -33,8 +34,10 @@ TabBarContainer.propTypes = {
 
 TabBarContainer.defaultProps = {
     tabId: 'home',
-    selectTab: (() => {}),
-    scroll: (() => {})
+    selectTab: (() => {
+    }),
+    scroll: (() => {
+    })
 };
 
 

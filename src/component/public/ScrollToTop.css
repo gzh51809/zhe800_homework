@@ -1,0 +1,21 @@
+.ScrollToTop {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #878686;
+  box-shadow: 0 0 10px #333;
+  background: #FFF; }
+  .ScrollToTop > i {
+    font-size: 34px; }
+  .ScrollToTop > p {
+    margin-top: 5px;
+    font-size: 22px; }
+
+.active {
+  opacity: 0.5; }
+
+/*# sourceMappingURL=ScrollToTop.css.map */

@@ -1,19 +1,20 @@
+import axios from 'axios';
 import {requestKind as apiRequestKind} from '../api';
-import {requestGoodList as apiRequestGoodList } from '../api';
+import {requestGoodList as apiRequestGoodList} from '../api';
 
 //-------------------异步接口动作-请求-返回-------------------
-const requestKind = () => dispatch => apiRequestKind().then(
-    response => {
-        if (response.data.code === '0') {
-            dispatch({type: responseKind, payload: response.data.list});
+const requestData = (data) => dispatch => axios.all([apiRequestKind(), apiRequestGoodList(data)]).then(
+    axios.spread((kindData, listData) => {
+        if (kindData.data.code === '0' && listData.data.code === '0') {
+            dispatch({type: responseData, payload: {kind: kindData.data.list, list: listData.data.list}});
         } else {
-            dispatch({type: responseKind, payload: []});
+            dispatch({type: responseData, payload: {}});
         }
-    }
+    })
 ).catch(
-    () => dispatch({type: responseKind, payload: []})
-);                                          //请求首页轮播图、tab、icon数据
-const responseKind = 'HOME_QUERY_KIND';     //返回首页轮播图、tab、icon数据
+    () => dispatch({type: responseData, payload: {}})
+);                                          //请求首页轮播图、tab、icon、list数据
+const responseData = 'HOME_QUERY_DATA';     //返回首页轮播图、tab、icon、list数据
 
 const requestList = (data) => dispatch => apiRequestGoodList(data).then(
     response => {
@@ -39,8 +40,8 @@ const clickAd = 'HOME_CLICK_AD';            //点击广告进入专题页面
 const clickGood = 'HOME_CLICK_GOOD';        //点击进入商品详情页
 
 export {
-    requestKind,
-    responseKind,
+    requestData,
+    responseData,
     requestList,
     responseList,
 

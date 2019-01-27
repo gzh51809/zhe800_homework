@@ -24,15 +24,25 @@
       line-height: 50px;
       border-radius: 50px 50px 0 0; }
     .GoodItem1 > div > h2 {
+      box-sizing: border-box;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       text-align: center;
-      font-size: 26px;
+      font-size: 24px;
       color: #333;
-      padding: 20px 0; }
+      padding: 20px 10px; }
     .GoodItem1 > div > h3 {
+      box-sizing: border-box;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       text-align: center;
-      font-size: 30px;
+      font-size: 28px;
       color: #E60044;
-      padding-bottom: 20px; }
+      padding: 0 10px 20px; }
 
 .active {
   opacity: 0.5; }

@@ -1,12 +1,15 @@
 let remFlexible = () => {
+    //计算dpr
+    let dpr = Math.min(window.devicePixelRatio || 1, 3);
+
     // 把尺寸放大N倍（N是window.devicePixelRatio）
-    let windowWidth = window.screen.width * window.devicePixelRatio / 10;
+    let rem = window.screen.width * dpr / 10;
 
     //物理像素*设备像素比=真实像素
-    document.querySelector('html').style.fontSize = windowWidth + "px";
+    document.querySelector('html').style.fontSize = rem + "px";
 
     // 把屏幕的倍率缩小到N分之一（N是window.devicePixelRatio）
-    let scale = 1 / window.devicePixelRatio;
+    let scale = 1 / dpr;
 
     document.querySelector('meta[name="viewport"]').content = 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no';
 };
