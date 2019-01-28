@@ -10,20 +10,20 @@ import style from './Home.scss';
 import {
     TopBar,
     TabBarContainer,
-    ScrollToTop
+    ScrollToTop,
+    Carousel,
+    TopTab,
+    IconArea
 } from '../component/public';
 
 import {
     SearchBar,
-    TopTab,
-    Carousel,
-    IconArea
+    AdArea
 } from '../component/home';
 
 import {ListContainer, GoodItem1} from '../component/good';
 
 import * as action from '../action/Home';
-import AdArea from "../component/home/AdArea";
 
 class Home extends Component {
     constructor() {
@@ -81,7 +81,7 @@ class Home extends Component {
 
     render() {
         let listElements = this.props.currentList.map((json, index) => (
-            <GoodItem1 key={index} good={json}
+            <GoodItem1 key={json._id} good={json}
                        clickItem={item => this.props.dispatch({
                            type: action.clickGood,
                            payload: item
@@ -110,6 +110,7 @@ class Home extends Component {
                               payload: item
                           })}/>
                 <IconArea data={this.props.currentIcon}
+                          iconRow={this.props.currentIcon.length}
                           clickIcon={item => this.props.dispatch({
                               type: action.clickIcon,
                               payload: item

@@ -68,13 +68,21 @@ body {
 .hidden {
   visibility: hidden; }
 
+.disappear {
+  display: none; }
+
+.appear {
+  display: block; }
+
 .visible {
   visibility: visible; }
 
 .stickTop {
   z-index: 9999;
   position: fixed;
-  top: 0; }
+  top: 0;
+  left: 0;
+  right: 0; }
 
 .app {
   position: fixed;

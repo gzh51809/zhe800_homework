@@ -8,11 +8,11 @@ const requestData = (data) => dispatch => axios.all([apiRequestKind(), apiReques
         if (kindData.data.code === '0' && listData.data.code === '0') {
             dispatch({type: responseData, payload: {kind: kindData.data.list, list: listData.data.list}});
         } else {
-            dispatch({type: responseData, payload: {}});
+            dispatch({type: responseData, payload: {kind: [], list: []}});
         }
     })
 ).catch(
-    () => dispatch({type: responseData, payload: {}})
+    () => dispatch({type: responseData, payload: {kind: [], list: []}})
 );                                          //请求首页轮播图、tab、icon、list数据
 const responseData = 'HOME_QUERY_DATA';     //返回首页轮播图、tab、icon、list数据
 

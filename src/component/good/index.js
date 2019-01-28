@@ -6,10 +6,14 @@ import ListContainer from './ListContainer';
  * 配合ListContainer使用
  */
 import GoodItem1 from './GoodItem1';
+import GoodItem2 from './GoodItem2';
+import GoodItem3 from './GoodItem3';
 
 export {
     ListContainer,
-    GoodItem1
+    GoodItem1,
+    GoodItem2,
+    GoodItem3
 }
 
 

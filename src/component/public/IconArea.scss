@@ -5,8 +5,7 @@
 
   .icon {
     box-sizing: border-box;
-    width: 25%;
-    padding: 30px 20px;
+    padding: 30px 10px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -22,7 +21,30 @@
 
     > p {
       color: #333;
+    }
+  }
+
+  .icon2 {
+    width: 50%;
+
+    > p {
       font-size: 28px;
+    }
+  }
+
+  .icon4 {
+    width: 25%;
+
+    > p {
+      font-size: 28px;
+    }
+  }
+
+  .icon5 {
+    width: 20%;
+
+    > p {
+      font-size: 24px;
     }
   }
 

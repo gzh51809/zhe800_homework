@@ -2,6 +2,11 @@
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  display: flex;
+
+  > * {
+    flex-shrink: 0;
+  }
 }
 
 .vertical {

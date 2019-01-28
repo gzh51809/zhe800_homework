@@ -1,0 +1,50 @@
+.GoodItem2 {
+  box-sizing: border-box;
+  padding: 0 20px 20px 0;
+
+  > div {
+    box-sizing: border-box;
+    border: 1px solid #EEE;
+    background-color: #FFF;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+    padding-top: 100%;
+    position: relative;
+
+    > h2 {
+      box-sizing: border-box;
+      width: 100%;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      text-align: center;
+      font-size: 24px;
+      color: #333;
+      margin: 10px 0;
+      padding: 0 10px;
+    }
+
+    > h3 {
+      font-weight: 600;
+      box-sizing: border-box;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-align: center;
+      font-size: 28px;
+      color: #E60044;
+      padding: 0 10px 10px;
+      >span{
+        font-weight: 600;
+        font-size: 34px;
+      }
+    }
+  }
+}
+
+.active {
+  opacity: 0.5;
+}

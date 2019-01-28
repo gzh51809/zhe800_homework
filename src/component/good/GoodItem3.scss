@@ -1,0 +1,119 @@
+.GoodItem3 {
+  box-sizing: border-box;
+  padding: 0 20px 20px 0;
+
+  > div {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #EEE;
+    background-color: #FFF;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+    padding-top: 100%;
+
+    > h2 {
+      box-sizing: border-box;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-align: center;
+      font-size: 28px;
+      color: #333;
+      margin: 10px 0;
+      padding: 0 10px;
+
+      > span {
+        display: inline;
+        font-size: 28px;
+        color: white;
+        background: #FFBE85;
+        margin-right: 10px;
+      }
+
+      > .disappear {
+        display: none;
+      }
+    }
+
+    > div.section {
+      display: flex;
+      margin-top: 10px;
+      padding: 0 10px;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      > h3 {
+        font-weight: 600;
+        box-sizing: border-box;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: center;
+        font-size: 24px;
+        color: #E60044;
+
+        > span {
+          font-weight: 600;
+          font-size: 26px;
+        }
+
+        > i {
+          margin-left: 10px;
+          font-weight: 500;
+          font-size: 24px;
+        }
+
+        > del {
+          margin-left: 10px;
+          font-weight: 500;
+          text-decoration: line-through;
+          color: #B5B5B5;
+          font-size: 24px;
+        }
+      }
+
+      > p {
+        font-weight: 500;
+        color: #B5B5B5;
+        font-size: 24px;
+      }
+
+      > h4, h5 {
+        font-weight: 500;
+        color: #B5B5B5;
+        font-size: 24px;
+        padding-bottom: 10px;
+      }
+    }
+
+    > div.coupon {
+      display: block;
+      position: absolute;
+      background: transparent url("../../image/coupon_bg.png") no-repeat center/cover;
+      left: 0;
+      top: 55%;
+      width: 115px;
+      padding: 5px 0;
+
+      > h2 {
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+
+      > h3 {
+        text-align: center;
+        color: white;
+        font-size: 20px;
+      }
+
+    }
+  }
+}
+
+.active {
+  opacity: 0.5;
+}

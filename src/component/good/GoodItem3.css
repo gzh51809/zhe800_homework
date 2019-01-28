@@ -1,0 +1,90 @@
+.GoodItem3 {
+  box-sizing: border-box;
+  padding: 0 20px 20px 0; }
+  .GoodItem3 > div {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #EEE;
+    background-color: #FFF;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+    padding-top: 100%; }
+    .GoodItem3 > div > h2 {
+      box-sizing: border-box;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-align: center;
+      font-size: 28px;
+      color: #333;
+      margin: 10px 0;
+      padding: 0 10px; }
+      .GoodItem3 > div > h2 > span {
+        display: inline;
+        font-size: 28px;
+        color: white;
+        background: #FFBE85;
+        margin-right: 10px; }
+      .GoodItem3 > div > h2 > .disappear {
+        display: none; }
+    .GoodItem3 > div > div.section {
+      display: flex;
+      margin-top: 10px;
+      padding: 0 10px;
+      justify-content: space-between;
+      align-items: flex-end; }
+      .GoodItem3 > div > div.section > h3 {
+        font-weight: 600;
+        box-sizing: border-box;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: center;
+        font-size: 24px;
+        color: #E60044; }
+        .GoodItem3 > div > div.section > h3 > span {
+          font-weight: 600;
+          font-size: 26px; }
+        .GoodItem3 > div > div.section > h3 > i {
+          margin-left: 10px;
+          font-weight: 500;
+          font-size: 24px; }
+        .GoodItem3 > div > div.section > h3 > del {
+          margin-left: 10px;
+          font-weight: 500;
+          text-decoration: line-through;
+          color: #B5B5B5;
+          font-size: 24px; }
+      .GoodItem3 > div > div.section > p {
+        font-weight: 500;
+        color: #B5B5B5;
+        font-size: 24px; }
+      .GoodItem3 > div > div.section > h4, .GoodItem3 > div > div.section h5 {
+        font-weight: 500;
+        color: #B5B5B5;
+        font-size: 24px;
+        padding-bottom: 10px; }
+    .GoodItem3 > div > div.coupon {
+      display: block;
+      position: absolute;
+      background: transparent url("../../image/coupon_bg.png") no-repeat center/cover;
+      left: 0;
+      top: 55%;
+      width: 115px;
+      padding: 5px 0; }
+      .GoodItem3 > div > div.coupon > h2 {
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        margin-bottom: 5px; }
+      .GoodItem3 > div > div.coupon > h3 {
+        text-align: center;
+        color: white;
+        font-size: 20px; }
+
+.active {
+  opacity: 0.5; }
+
+/*# sourceMappingURL=GoodItem3.css.map */

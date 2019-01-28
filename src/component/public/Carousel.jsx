@@ -17,7 +17,7 @@ class Carousel extends Component {
 
     render() {
         let images = this.props.data.map((item, index) => (
-            <TouchBox key={index}
+            <TouchBox key={item.bannerSrc}
                       className={style.member}
                       activeClass={style.active}
                       tab={() => this.props.clickBanner(item)}>
@@ -28,10 +28,15 @@ class Carousel extends Component {
             </TouchBox>
 
         ));
+        let dots = images.length !== 1;
+        let autoPlay = images.length !== 1;
+        let infinite = images.length !== 1;
 
         return (
             <div className={this.state.carouselClass}>
-                <UICarousel autoplay infinite>
+                <UICarousel autoplay={autoPlay}
+                            infinite={infinite}
+                            dots={dots}>
                     {images}
                 </UICarousel>
             </div>

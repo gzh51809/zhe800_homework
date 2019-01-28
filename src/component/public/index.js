@@ -4,6 +4,10 @@ import ScrollContainer from './ScrollContainer';
 import TabBarContainer from './TabBarContainer';
 import TouchBox from './TouchBox';
 import ScrollToTop from './ScrollToTop';
+import Carousel from './Carousel';
+import Header from './Header';
+import TopTab from './TopTab';
+import IconArea from './IconArea';
 
 export {
     TopBar,
@@ -11,5 +15,9 @@ export {
     ScrollContainer,
     TabBarContainer,
     TouchBox,
-    ScrollToTop
+    ScrollToTop,
+    Carousel,
+    Header,
+    TopTab,
+    IconArea
 }

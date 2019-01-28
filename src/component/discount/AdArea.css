@@ -1,0 +1,20 @@
+.AdArea {
+  display: flex;
+  flex-flow: row wrap;
+  border-bottom: 2px solid #EEE; }
+  .AdArea > .item {
+    box-sizing: border-box;
+    border-right: 2px solid #EEE;
+    width: 50%;
+    height: 250px;
+    background-color: #FFF;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain; }
+  .AdArea > .item:nth-of-type(2n) {
+    border-right: none; }
+
+.active {
+  opacity: 0.5; }
+
+/*# sourceMappingURL=AdArea.css.map */

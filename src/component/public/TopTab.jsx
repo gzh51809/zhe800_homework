@@ -35,10 +35,10 @@ class TopTab extends Component {
                         {tabs}
                     </div>
                 </ScrollContainer>
-                <TouchBox tagName={'p'}
-                          tab={() => console.log('更多')}
-                          className={classNames(style.more, icon["icon-jiantou-xia"])}
-                          activeClass={style.moreActive}/>
+                {/*<TouchBox tagName={'p'}*/}
+                          {/*tab={() => console.log('更多')}*/}
+                          {/*className={classNames(style.more, icon["icon-jiantou-xia"])}*/}
+                          {/*activeClass={style.moreActive}/>*/}
             </div>
         );
     }

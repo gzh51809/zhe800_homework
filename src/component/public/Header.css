@@ -1,0 +1,12 @@
+.Header {
+  height: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFF;
+  border-bottom: 2px solid #EEE; }
+  .Header > p {
+    font-size: 36px;
+    color: #2b292a; }
+
+/*# sourceMappingURL=Header.css.map */

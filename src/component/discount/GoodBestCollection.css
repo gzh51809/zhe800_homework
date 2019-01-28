@@ -1,0 +1,11 @@
+.GoodBestCollection {
+  background: #FFF;
+  padding: 20px 20px 0 20px; }
+  .GoodBestCollection > h2 {
+    color: #F110C4;
+    font-size: 34px;
+    line-height: 76px; }
+  .GoodBestCollection .member {
+    width: 210px; }
+
+/*# sourceMappingURL=GoodBestCollection.css.map */

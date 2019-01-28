@@ -1,10 +1,44 @@
-//异步动作的结果
-const responseBanner = 'DISCOUNT_QUERY_BANNER'; //请求轮播图数据
-const responseKind = 'DISCOUNT_QUERY_BANNER';   //请求tab类型数据
-const responseIcon = 'DISCOUNT_QUERY_ICON';     //请求icon数据
-const responseAd = 'DISCOUNT_QUERY_AD';         //请求广告区数据
-const responseGoods = 'DISCOUNT_QUERY_GOODS';   //请求精选好货
-const responseList = 'DISCOUNT_QUERY_LIST';     //请求列表数据
+import axios from 'axios';
+import {
+    requestDiscountKind as apiRequestDiscountKind,
+    requestDiscountIcon as apiRequestDiscountIcon,
+    requestDiscountAd as apiRequestDiscountAd,
+    requestDiscountCollection as apiRequestDiscountCollection,
+    requestDiscountList as apiRequestDiscountList
+} from '../api';
+
+//-------------------异步接口动作-请求-返回-------------------
+const requestData = data => dispatch => axios.all([
+    apiRequestDiscountKind(),
+    apiRequestDiscountIcon(),
+    apiRequestDiscountAd(),
+    apiRequestDiscountCollection(),
+    apiRequestDiscountList(data)
+]).then(
+    axios.spread((tabData, iconData, adData, collectionData, lisData) => {
+        if (tabData.data.code === '0' &&
+            iconData.data.code === '0' &&
+            adData.data.code === '0' &&
+            collectionData.data.code === '0' &&
+            lisData.data.code === '0') {
+            dispatch({
+                type: responseData, payload: {
+                    kind: tabData.data.list,
+                    icon: iconData.data.list,
+                    ad: adData.data.list,
+                    collection: collectionData.data.list,
+                    list: lisData.data.list
+                }
+            });
+        } else {
+            dispatch({type: responseData, payload: {kind: [], icon: [], ad: [], list: []}});
+        }
+    })
+).catch(
+    () => dispatch({type: responseData, payload: {kind: [], icon: [], ad: [], list: []}})
+);                                              //请求淘特价页轮播图、tab、icon、list数据
+const responseData = 'DISCOUNT_QUERY_DATA';     //返回淘特价页轮播图、tab、icon、list数据
+
 
 //同步动作
 const clickTab = 'DISCOUNT_CLICK_TAB';          //Tab数据切换
@@ -14,12 +48,8 @@ const clickAd = 'DISCOUNT_CLICK_AD';            //点击广告区
 const clickDetail = 'DISCOUNT_CLICK_DETAIL';    //点击详情
 
 export {
-    responseBanner,
-    responseKind,
-    responseIcon,
-    responseAd,
-    responseGoods,
-    responseList,
+    requestData,
+    responseData,
 
     clickTab,
     clickBanner,

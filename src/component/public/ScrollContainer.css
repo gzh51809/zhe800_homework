@@ -1,7 +1,10 @@
 .horizontal {
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+  display: flex; }
+  .horizontal > * {
+    flex-shrink: 0; }
 
 .vertical {
   overflow-x: hidden;
