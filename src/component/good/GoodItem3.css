@@ -14,10 +14,11 @@
       box-sizing: border-box;
       width: 100%;
       overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      text-align: center;
-      font-size: 28px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      text-align: left;
+      font-size: 26px;
       color: #333;
       margin: 10px 0;
       padding: 0 10px; }
@@ -71,8 +72,8 @@
       position: absolute;
       background: transparent url("../../image/coupon_bg.png") no-repeat center/cover;
       left: 0;
-      top: 55%;
-      width: 115px;
+      top: 48%;
+      width: 120px;
       padding: 5px 0; }
       .GoodItem3 > div > div.coupon > h2 {
         text-align: center;

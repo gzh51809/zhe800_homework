@@ -25,12 +25,12 @@ class GoodItem3 extends Component {
                             <span>{Math.trunc(this.props.good.price)}</span>
                             {Boolean(this.props.good.price - Math.trunc(this.props.good.price)) && ('.' + String(this.props.good.price).replace(/(\d*\.)/g, ''))}
                             <i>{this.props.good.afterDiscount}</i>
-                            <del>{this.props.good.originPrice}</del>
+                            <del>{Boolean(this.props.good.originPrice) && '¥' + this.props.good.originPrice}</del>
                         </h3>
                         <p>{this.props.good.containPostage}</p>
                     </div>
                     <div className={style.section}>
-                        <h4>{this.props.good.saleAmount > 10000 ? (String(this.props.good.saleAmount / 10000) + '万') : this.props.good.saleAmount}件已售</h4>
+                        <h4>{this.props.good.saleAmount >= 10000 ? (String(this.props.good.saleAmount / 10000) + '万') : this.props.good.saleAmount}件已售</h4>
                         <h5>去{this.props.good.linkName}</h5>
                     </div>
                     <div

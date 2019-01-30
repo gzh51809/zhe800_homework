@@ -5,6 +5,8 @@ import requestDiscountIcon from './requestDiscountIcon';
 import requestDiscountAd from './requestDiscountAd';
 import requestDiscountCollection from './requestDiscountCollection';
 import requestDiscountList from './requestDiscountList';
+import requestBrandKind from './requestBrandKind';
+import requestBrandList from './requestBrandList';
 
 export {
     requestKind,
@@ -13,5 +15,7 @@ export {
     requestDiscountIcon,
     requestDiscountAd,
     requestDiscountCollection,
-    requestDiscountList
+    requestDiscountList,
+    requestBrandKind,
+    requestBrandList
 }

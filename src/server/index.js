@@ -10,6 +10,8 @@ const requestDiscountIcon = require('./requestDiscountIcon');
 const requestDiscountAd = require('./requestDiscountAd');
 const requestDiscountCollection = require('./requestDiscountCollection');
 const requestDiscountList = require('./requestDiscountList');
+const requestBrandKind = require('./requestBrandKind');
+const requestBrandList = require('./requestBrandList');
 
 let app = express();
 //某些特殊端口如6000   Google报unsafe_port
@@ -37,3 +39,5 @@ app.use('/zhe800/', requestDiscountIcon);
 app.use('/zhe800/', requestDiscountAd);
 app.use('/zhe800/', requestDiscountCollection);
 app.use('/zhe800/', requestDiscountList);
+app.use('/zhe800/', requestBrandKind);
+app.use('/zhe800/', requestBrandList);

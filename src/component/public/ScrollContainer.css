@@ -1,14 +1,30 @@
 .horizontal {
+  position: relative;
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  display: flex; }
-  .horizontal > * {
-    flex-shrink: 0; }
+  -webkit-overflow-scrolling: touch; }
 
 .vertical {
+  position: relative;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; }
+
+.horizontalWrapper {
+  display: flex;
+  flex-flow: row nowrap; }
+  .horizontalWrapper > * {
+    flex-shrink: 0; }
+
+.verticalWrapper {
+  display: flex;
+  flex-flow: column nowrap; }
+  .verticalWrapper > * {
+    flex-shrink: 0; }
+
+.scrollToTop {
+  position: fixed;
+  right: 10%;
+  bottom: 13%; }
 
 /*# sourceMappingURL=ScrollContainer.css.map */

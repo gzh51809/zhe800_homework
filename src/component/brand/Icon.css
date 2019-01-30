@@ -1,0 +1,29 @@
+.Icon {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 140px;
+  background: #FFF; }
+  .Icon > img {
+    display: block;
+    width: 68px;
+    height: 68px;
+    border-radius: 68px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 10px; }
+  .Icon > p {
+    font-size: 28px; }
+
+.active > p {
+  color: #fc4848; }
+
+.default > p {
+  color: #333; }
+
+.IconActive > p {
+  color: #fc4848; }
+
+/*# sourceMappingURL=Icon.css.map */

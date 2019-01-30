@@ -73,6 +73,7 @@ export default (state = defaultState, action) => {
             let cloneState = {...state};
             cloneState.currentBanner = cloneState.banner.filter(item => item.kindId === action.payload.kindId);
             cloneState.selectTab = action.payload;
+            cloneState.currentList = cloneState.listData.filter(item => item.kindId === cloneState.selectTab.kindId);
             return cloneState;
         }
         case clickBanner:

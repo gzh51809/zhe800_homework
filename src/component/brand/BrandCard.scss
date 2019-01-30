@@ -1,0 +1,70 @@
+.BrandCard {
+  position: relative;
+  > img {
+    display: block;
+    width: 100%;
+    height: 310px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  > div.description {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+
+    > p {
+      font-size: 26px;
+      color: #6b6b6b;
+    }
+
+    > span {
+      font-size: 26px;
+      color: #fc484b;
+    }
+  }
+
+  > div.discount {
+    position: absolute;
+    left: 0;
+    top: 60%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+
+    > i {
+      border-radius: 5px;
+      color: white;
+      padding: 5px;
+      background: #fc474b;
+      font-size: 20px;
+      margin-right: 10px;
+      font-weight: 600;
+    }
+
+    > p {
+      font-size: 22px;
+      color: #333;
+    }
+
+    > span {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 100%;
+      width: 0;
+      height: 0;
+      border-left: 22px solid rgba(255, 255, 255, 0.8);
+      border-right: 22px solid transparent;
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+    }
+  }
+
+}
+
+.BrandCardActive {
+  opacity: 0.5;
+}

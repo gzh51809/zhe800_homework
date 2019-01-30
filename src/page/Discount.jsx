@@ -23,7 +23,6 @@ import {
 } from '../component/good';
 import base from "../scss/base.scss";
 import classNames from "classnames";
-import style from "./Home.scss";
 
 
 class Discount extends Component {
@@ -41,7 +40,7 @@ class Discount extends Component {
     componentWillMount() {
         this.props.dispatch(action.requestData({
             kindIds: [
-                'jingxuan', 'fuzhaung',
+                'jingxuan', 'fuzhuang',
                 'jiajubaihuo', 'xiebaopeishi',
                 'muyingertong', 'meishi'
             ]
@@ -84,8 +83,8 @@ class Discount extends Component {
         return (
             <TabBarContainer tabId={'discount'}
                              scroll={this.scrollSticky}
-                             ref={'tabbar'}
-                             selectTab={(item) => this.props.history.push(item.id)}>
+                             selectTab={(item) => this.props.history.push(item.id)}
+                             needScrollToTop={true}>
                 <Header ref={'header'} title={'淘特价'}/>
                 <div className={this.state.isSticky ? base.stickTop : null}>
                     <TopTab leftTab={this.props.selectTab}
@@ -119,10 +118,10 @@ class Discount extends Component {
                                             payload: item
                                         })}
                     />
-                    <ListContainer>
-                        {goods}
-                    </ListContainer>
                 </div>
+                <ListContainer>
+                    {goods}
+                </ListContainer>
             </TabBarContainer>
         );
     }

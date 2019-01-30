@@ -5,6 +5,11 @@
     color: #F110C4;
     font-size: 34px;
     line-height: 76px; }
+  .GoodBestCollection .wrapper {
+    height: 320px;
+    display: flex; }
+    .GoodBestCollection .wrapper > * {
+      flex-shrink: 0; }
   .GoodBestCollection .member {
     width: 210px; }
 

@@ -6,8 +6,7 @@
 .AdArea img.gallery {
   display: block;
   object-fit: cover;
-  width: 100%;
-  min-height: 210px; }
+  width: 100%; }
 .AdArea > div.areaWrapper {
   display: flex;
   align-items: flex-start; }

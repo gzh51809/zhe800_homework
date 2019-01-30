@@ -2,15 +2,12 @@ import React, {
     Component
 } from 'react';
 import {findDOMNode} from 'react-dom';
-import classNames from 'classnames';
 import {connect} from "react-redux";
 import base from '../scss/base.scss';
-import style from './Home.scss';
 
 import {
     TopBar,
     TabBarContainer,
-    ScrollToTop,
     Carousel,
     TopTab,
     IconArea
@@ -34,7 +31,6 @@ class Home extends Component {
         };
 
         this.scrollSticky = this.scrollSticky.bind(this);
-        this.scrollToTop = this.scrollToTop.bind(this);
         this.timer = null;
     }
 
@@ -67,18 +63,6 @@ class Home extends Component {
 
     }
 
-    scrollToTop() {
-        let scrollContainer = findDOMNode(this.refs.tabbar.refs.scrollContainer);
-
-        clearInterval(this.timer);
-        this.timer = setInterval(() => {
-            scrollContainer.scrollTop = Math.max(scrollContainer.scrollTop - 50, 0);
-            if (scrollContainer.scrollTop === 0) {
-                clearInterval(this.timer);
-            }
-        }, 10);
-    }
-
     render() {
         let listElements = this.props.currentList.map((json, index) => (
             <GoodItem1 key={json._id} good={json}
@@ -92,10 +76,8 @@ class Home extends Component {
             <TabBarContainer tabId={'home'}
                              ref={'tabbar'}
                              selectTab={item => this.props.history.push(item.id)}
-                             scroll={this.scrollSticky}>
-                <div className={this.state.needScrollToTop ? classNames(style.scrollToTop, base.visible) : classNames(style.scrollToTop, base.hidden)}>
-                    <ScrollToTop clickAction={this.scrollToTop}/>
-                </div>
+                             scroll={this.scrollSticky}
+                             needScrollToTop={true}>
                 <TopBar download={() => this.props.dispatch({type: action.downloadApp})}/>
                 <SearchBar clickBar={() => this.props.history.push('/search')}/>
                 <div className={this.state.isSticky ? base.stickTop : null}>
