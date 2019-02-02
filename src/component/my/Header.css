@@ -1,0 +1,34 @@
+.Header {
+  width: 100%;
+  background: transparent url("../../image/topbg.png") no-repeat center/cover; }
+  .Header .UIHeader {
+    background: transparent;
+    border: none; }
+    .Header .UIHeader > p {
+      font-weight: 600;
+      color: white; }
+  .Header > div.buttonContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 60px; }
+    .Header > div.buttonContainer > div.loginReg {
+      padding: 0 15px;
+      border-radius: 70px;
+      border: 5px solid #FFF;
+      display: flex;
+      align-items: center; }
+      .Header > div.buttonContainer > div.loginReg > p {
+        font-size: 38px;
+        line-height: 38px;
+        color: white;
+        font-weight: 600; }
+      .Header > div.buttonContainer > div.loginReg > .button {
+        font-size: 38px;
+        line-height: 38px;
+        color: white;
+        font-weight: 600;
+        padding: 20px; }
+      .Header > div.buttonContainer > div.loginReg > .active {
+        opacity: 0.5; }
+
+/*# sourceMappingURL=Header.css.map */

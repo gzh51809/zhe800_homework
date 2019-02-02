@@ -5,15 +5,15 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import style from './TopTab.scss';
-import icon from '../../scss/iconfont.css'
 
 import {ScrollContainer, TouchBox} from '../public';
 
 class TopTab extends Component {
     render() {
-        let tabs = this.props.tabs.map((item, index) => {
+        let tabs = this.props.tabs.map(item => {
             return (
-                <TouchBox key={index}
+                <TouchBox key={item.kindId}
+                          tagName={'p'}
                           tab={() => this.props.clickTab(item)}
                           activeClass={style.active}
                           className={style.tab}>
@@ -25,20 +25,12 @@ class TopTab extends Component {
 
         return (
             <div className={style.TobTab}>
-                <TouchBox tagName={'p'}
-                          tab={() => this.props.clickTab(this.props.leftTab)}
-                          className={classNames(style.tab, style.select)}>
+                <p className={classNames(style.tab, style.select)}>
                     {this.props.leftTab.kindName}
-                </TouchBox>
+                </p>
                 <ScrollContainer direction={'horizontal'}>
-                    <div className={style.tabWrapper}>
-                        {tabs}
-                    </div>
+                    {tabs}
                 </ScrollContainer>
-                {/*<TouchBox tagName={'p'}*/}
-                          {/*tab={() => console.log('更多')}*/}
-                          {/*className={classNames(style.more, icon["icon-jiantou-xia"])}*/}
-                          {/*activeClass={style.moreActive}/>*/}
             </div>
         );
     }

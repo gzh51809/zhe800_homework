@@ -19,6 +19,23 @@ window.addEventListener('pageshow', remFlexible);
 remFlexible();
 
 /**
+ * 苹果全局处理input、textarea
+ */
+let inputTouch = event => {
+    if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+        event.target.focus();
+        setTimeout(() => window.scrollTo(0,window.scrollY + event.target.offsetHeight), 100);
+    } else if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
+        document.activeElement.blur();
+    }
+    event.stopPropagation();
+};
+
+if (navigator.platform === 'iPhone' || navigator.platform === 'iPad' ){
+    document.addEventListener('touchend', inputTouch, {passive: false});
+}
+
+/**
  * 苹果上阻止用户缩放界面
  */
 let touchstart = event => {
@@ -50,6 +67,7 @@ window.onunload = () => {
 
     document.removeEventListener('touchstart', touchstart);
     document.removeEventListener('touchend', touchend);
+    document.removeEventListener('touchend', inputTouch);
     document.removeEventListener('touchcancel', touchend);
     document.removeEventListener('gesturestart', gesturestart);
     touchstart = null;

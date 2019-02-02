@@ -1,0 +1,25 @@
+.CellIcon {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 2px solid #EEE; }
+  .CellIcon > div {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    color: #2b2929; }
+    .CellIcon > div > i {
+      font-size: 42px;
+      margin-bottom: 10px; }
+    .CellIcon > div > span {
+      font-size: 22px; }
+
+.boldBorder {
+  border-width: 20px; }
+
+.active {
+  opacity: 0.5; }
+
+/*# sourceMappingURL=CellIcon.css.map */

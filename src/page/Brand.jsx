@@ -51,7 +51,7 @@ class Brand extends Component {
     render() {
         let icons = this.props.currentIcon.map(item => (
             <Icon icon={item}
-                  key={item.iconId + String(Date.now())}
+                  key={item.iconId}
                   clickItem={() => this.props.dispatch({
                       type: action.clickIcon,
                       payload: item
@@ -60,7 +60,7 @@ class Brand extends Component {
 
         let currentList = this.props.currentList.map(item => (
             <BrandCard brand={item}
-                       key={item.brandId + String(Date.now())}
+                       key={item.brandId}
                        clickItem={() => this.props.dispatch({
                            type: action.clickDetail,
                            payload: item
@@ -69,6 +69,7 @@ class Brand extends Component {
 
         return (
             <TabBarContainer tabId={'brand'}
+                             tabs={this.props.tabs}
                              scroll={this.scrollSticky}
                              selectTab={(item) => this.props.history.push(item.id)}
                              needScrollToTop={true}>

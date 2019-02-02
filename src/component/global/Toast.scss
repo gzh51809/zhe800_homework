@@ -1,0 +1,26 @@
+.Toast {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+
+  > * {
+    background: #AAA;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 34px;
+    font-weight: 700;
+  }
+}
+
+.showToast {
+  display: flex;
+}
+
+.hideToast {
+  display: none;
+}

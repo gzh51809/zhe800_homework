@@ -17,10 +17,10 @@
   .Icon > p {
     font-size: 28px; }
 
-.active > p {
+.active {
   color: #fc4848; }
 
-.default > p {
+.default {
   color: #333; }
 
 .IconActive > p {

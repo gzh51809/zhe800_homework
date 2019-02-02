@@ -1,6 +1,8 @@
 import axios from 'axios';
-import {requestKind as apiRequestKind} from '../api';
-import {requestGoodList as apiRequestGoodList} from '../api';
+import {
+    requestKind as apiRequestKind,
+    requestGoodList as apiRequestGoodList
+} from '../api';
 
 //-------------------异步接口动作-请求-返回-------------------
 const requestData = (data) => dispatch => axios.all([apiRequestKind(), apiRequestGoodList(data)]).then(
@@ -36,7 +38,6 @@ const pushKind = 'HOME_PUSH_KIND';          //进入分类页
 const clickBanner = 'HOME_CLICK_BANNER';    //点击轮播图
 const clickTab = 'HOME_CLICK_TAB';          //Tab数据切换
 const clickIcon = 'HOME_CLICK_ICON';        //点击icon进入专题页面
-const clickAd = 'HOME_CLICK_AD';            //点击广告进入专题页面
 const clickGood = 'HOME_CLICK_GOOD';        //点击进入商品详情页
 
 export {
@@ -51,6 +52,5 @@ export {
     clickBanner,
     clickTab,
     clickIcon,
-    clickAd,
     clickGood
 };

@@ -7,7 +7,23 @@
   border-bottom: 2px solid #EEE;
 
   > p {
+    flex: 1;
+    text-align: center;
     font-size: 36px;
     color: #2b292a;
   }
+
+  > span {
+    width: 60px;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    color: #2b292a;
+  }
+}
+
+.active {
+  opacity: 0.5;
 }

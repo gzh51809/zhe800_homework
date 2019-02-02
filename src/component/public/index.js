@@ -8,6 +8,8 @@ import Carousel from './Carousel';
 import Header from './Header';
 import TopTab from './TopTab';
 import IconArea from './IconArea';
+import InputBox from './InputBox';
+import SubmitButton from './SubmitButton';
 
 export {
     TopBar,
@@ -19,5 +21,7 @@ export {
     Carousel,
     Header,
     TopTab,
-    IconArea
+    IconArea,
+    InputBox,
+    SubmitButton,
 }

@@ -1,0 +1,20 @@
+.TimeCounter {
+  position: absolute;
+  display: flex;
+  top: 23%;
+  left: 5%;
+  align-items: center; }
+  .TimeCounter > p {
+    background-color: #333;
+    padding: 5px;
+    color: white;
+    font-size: 24px;
+    border-radius: 5px;
+    font-weight: 700; }
+  .TimeCounter > span {
+    font-size: 24px;
+    color: #2B2B2B;
+    font-weight: 700;
+    margin: 0 3px; }
+
+/*# sourceMappingURL=TimeCounter.css.map */

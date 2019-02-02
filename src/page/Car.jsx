@@ -1,7 +1,7 @@
 import React, {
     Component
 } from 'react';
-import {ReactReduxContext} from "react-redux";
+import {connect} from "react-redux";
 
 import * as action from '../action/Car';
 
@@ -11,6 +11,7 @@ class Car extends Component {
     render() {
         return (
             <TabBarContainer tabId={'car'}
+                             tabs={this.props.tabs}
                              selectTab={(item) => this.props.history.push(item.id)}>
 
             </TabBarContainer>
@@ -18,6 +19,6 @@ class Car extends Component {
     }
 }
 
-Car.contextType = ReactReduxContext;
+Car = connect(state => state.car)(Car);
 
 export default Car;

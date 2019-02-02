@@ -19,6 +19,7 @@ class TabBarContainer extends Component {
                     {this.props.children}
                 </ScrollContainer>
                 <TabBar selectId={this.props.tabId}
+                        tabs={this.props.tabs}
                         clickTab={(item) => {
                             item.id !== this.props.tabId && this.props.selectTab(item);
                         }}/>
@@ -28,6 +29,7 @@ class TabBarContainer extends Component {
 }
 
 TabBarContainer.propTypes = {
+    tabs: PropType.array,
     tabId: PropType.string,
     selectTab: PropType.func,
     scroll: PropType.func,
@@ -35,6 +37,7 @@ TabBarContainer.propTypes = {
 };
 
 TabBarContainer.defaultProps = {
+    tabs: [],
     tabId: 'home',
     selectTab: (() => {}),
     scroll: (() => {})

@@ -18,12 +18,6 @@ class TouchBox extends Component {
         this.touchCancel = this.touchCancel.bind(this);
     }
 
-    componentWillMount() {
-        this.setState({
-            theClass: this.props.className
-        })
-    }
-
     touchStart() {
         this.response = true;
         this.setState({
@@ -39,13 +33,13 @@ class TouchBox extends Component {
     }
 
     touchEnd() {
+        this.setState({
+            theClass: this.props.className
+        });
         if (this.response) {
             this.props.tab();
         }
         this.response = false;
-        this.setState({
-            theClass: this.props.className
-        });
     }
 
     touchCancel() {
@@ -61,7 +55,7 @@ class TouchBox extends Component {
             case 'div':
             default:
                 element = (
-                    <div className={this.state.theClass}
+                    <div className={Boolean(this.state.theClass) ? this.state.theClass : this.props.className}
                          style={this.props.style}
                          onTouchStart={this.touchStart}
                          onTouchMove={this.touchMove}
@@ -73,7 +67,7 @@ class TouchBox extends Component {
                 break;
             case 'p':
                 element = (
-                    <p className={this.state.theClass}
+                    <p className={Boolean(this.state.theClass) ? this.state.theClass : this.props.className}
                        style={this.props.style}
                        onTouchStart={this.touchStart}
                        onTouchMove={this.touchMove}
@@ -85,7 +79,7 @@ class TouchBox extends Component {
                 break;
             case 'span':
                 element = (
-                    <span className={this.state.theClass}
+                    <span className={Boolean(this.state.theClass) ? this.state.theClass : this.props.className}
                           style={this.props.style}
                           onTouchStart={this.touchStart}
                           onTouchMove={this.touchMove}
@@ -95,6 +89,42 @@ class TouchBox extends Component {
                     </span>
                 );
                 break;
+            case 'h3':
+                element = (
+                    <h3 className={Boolean(this.state.theClass) ? this.state.theClass : this.props.className}
+                          style={this.props.style}
+                          onTouchStart={this.touchStart}
+                          onTouchMove={this.touchMove}
+                          onTouchEnd={this.touchEnd}
+                          onTouchCancel={this.touchCancel}>
+                        {this.props.children}
+                    </h3>
+                );
+                break;
+            case 'h4':
+                element = (
+                    <h4 className={Boolean(this.state.theClass) ? this.state.theClass : this.props.className}
+                        style={this.props.style}
+                        onTouchStart={this.touchStart}
+                        onTouchMove={this.touchMove}
+                        onTouchEnd={this.touchEnd}
+                        onTouchCancel={this.touchCancel}>
+                        {this.props.children}
+                    </h4>
+                );
+                break;
+            case 'h5':
+                element = (
+                    <h5 className={Boolean(this.state.theClass) ? this.state.theClass : this.props.className}
+                        style={this.props.style}
+                        onTouchStart={this.touchStart}
+                        onTouchMove={this.touchMove}
+                        onTouchEnd={this.touchEnd}
+                        onTouchCancel={this.touchCancel}>
+                        {this.props.children}
+                    </h5>
+                );
+                break;
         }
 
 
@@ -102,8 +132,19 @@ class TouchBox extends Component {
     }
 }
 
+/**
+ * 注意：
+ * 使用TouchBox时
+ * className属性不可以成为外部响应式依赖
+ * 但可以成为外部参数传入的接口
+ *
+ * 如果要成为响应式依赖的做法
+ * 不使用className
+ * 在非active时，通过标签选择器，选中包裹元素进行样式布局
+ * 在active时，通过类选择器，选中包裹元素的样式，发生active变化
+ */
 TouchBox.propTypes = {
-    tagName: PropTypes.oneOf(['div', 'p', 'span']),
+    tagName: PropTypes.oneOf(['div', 'p', 'span', 'h3', 'h4', 'h5']),
     tab: PropTypes.func,
     activeClass: PropTypes.string
 };

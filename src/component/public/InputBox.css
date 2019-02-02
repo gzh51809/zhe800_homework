@@ -1,0 +1,47 @@
+.InputBox > div {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #EEE; }
+  .InputBox > div > i {
+    font-size: 28px;
+    margin-right: 20px;
+    color: #CCC; }
+  .InputBox > div .inputArea {
+    flex: 1; }
+    .InputBox > div .inputArea > input {
+      display: block;
+      width: 100%;
+      font-size: 28px;
+      color: #333;
+      padding: 30px 0; }
+    .InputBox > div .inputArea > input::-webkit-input-placeholder {
+      color: #CCC; }
+  .InputBox > div > h3 > p.rightButton {
+    min-width: 190px;
+    border: 1px solid #AAA;
+    font-size: 26px;
+    padding: 10px 0;
+    border-radius: 46px;
+    text-align: center;
+    color: #AAA; }
+  .InputBox > div > h3 > p.buttonActive {
+    border: 1px solid #E30C26;
+    color: white;
+    background: #E30C26; }
+  .InputBox > div > h3.rightButtonActive > p {
+    color: #E30C26;
+    background: white; }
+  .InputBox > div > span.rightIcon {
+    font-size: 28px;
+    padding: 20px 0 20px 60px;
+    text-align: center;
+    color: #AAA; }
+.InputBox > .tips {
+  margin-left: 50px;
+  font-size: 24px;
+  color: #CCC;
+  padding: 10px 0; }
+.InputBox .active {
+  opacity: 0.5; }
+
+/*# sourceMappingURL=InputBox.css.map */

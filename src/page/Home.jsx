@@ -21,6 +21,7 @@ import {
 import {ListContainer, GoodItem1} from '../component/good';
 
 import * as action from '../action/Home';
+import iconfont from "../scss/iconfont.css";
 
 class Home extends Component {
     constructor() {
@@ -31,6 +32,7 @@ class Home extends Component {
         };
 
         this.scrollSticky = this.scrollSticky.bind(this);
+        this.clickAdArea = this.clickAdArea.bind(this);
         this.timer = null;
     }
 
@@ -63,6 +65,14 @@ class Home extends Component {
 
     }
 
+    clickAdArea(item) {
+        switch (item.type) {
+            case 'rightTop':
+                this.props.history.push('/brand');
+                break;
+        }
+    }
+
     render() {
         let listElements = this.props.currentList.map((json, index) => (
             <GoodItem1 key={json._id} good={json}
@@ -74,6 +84,7 @@ class Home extends Component {
 
         return (
             <TabBarContainer tabId={'home'}
+                             tabs={this.props.tabs}
                              ref={'tabbar'}
                              selectTab={item => this.props.history.push(item.id)}
                              scroll={this.scrollSticky}
@@ -100,10 +111,7 @@ class Home extends Component {
                 <AdArea adObject={this.props.currentAd}
                         deadline={Date.parse(new Date()) + 1000 * 60 * 60 * 2}
                         deadLinePrice={'95.8'}
-                        clickAdObject={item => this.props.dispatch({
-                            type: action.clickAd,
-                            payload: item
-                        })}/>
+                        clickAdObject={item => this.clickAdArea(item)}/>
                 <ListContainer ref={'list'}>
                     {listElements}
                 </ListContainer>

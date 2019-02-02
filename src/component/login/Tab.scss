@@ -1,0 +1,28 @@
+.Tab {
+  display: flex;
+
+  > div {
+    flex: 1;
+
+    > p.tab {
+      font-size: 32px;
+      line-height: 100px;
+      text-align: center;
+      color: #666;
+      border-bottom: 5px solid #CCC;
+    }
+
+    > p.tabActive {
+      color: #E30C26;
+      border-bottom: 5px solid #E30C26;
+    }
+  }
+
+  > div.active {
+    > p {
+      color: #E30C26;
+      border-bottom: 5px solid #E30C26;
+    }
+  }
+
+}

@@ -3,17 +3,21 @@ import React, {
 } from 'react';
 
 import {
+    Header,
     ScrollContainer
 } from '../component/public';
 
-class Search extends Component {
+class Register extends Component {
     render() {
         return (
             <ScrollContainer>
-                搜索页
+                <Header title={'分类搜索'}
+                        leftConfig={[{icon: 'icon-jiantou-zuo'}]}
+                        clickHeaderButton={() => this.props.history.goBack()}/>
             </ScrollContainer>
         );
     }
 }
 
-export default Search;
+export default Register;
+

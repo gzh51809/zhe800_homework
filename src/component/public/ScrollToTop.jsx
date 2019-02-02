@@ -26,8 +26,7 @@ ScrollToTop.propTypes = {
 };
 
 ScrollToTop.defaultProps = {
-    clickAction: (() => {
-    })
+    clickAction: (() => {})
 };
 
 export default ScrollToTop;

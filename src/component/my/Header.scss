@@ -1,0 +1,47 @@
+.Header {
+  width: 100%;
+  background: transparent url("../../image/topbg.png") no-repeat center/cover;
+
+  .UIHeader {
+    background: transparent;
+    border: none;
+
+    > p {
+      font-weight: 600;
+      color: white;
+    }
+  }
+
+  > div.buttonContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 60px;
+
+    > div.loginReg {
+      padding: 0 15px;
+      border-radius: 70px;
+      border: 5px solid #FFF;
+      display: flex;
+      align-items: center;
+
+      > p {
+        font-size: 38px;
+        line-height: 38px;
+        color: white;
+        font-weight: 600;
+      }
+
+      > .button {
+        font-size: 38px;
+        line-height: 38px;
+        color: white;
+        font-weight: 600;
+        padding: 20px;
+      }
+
+      > .active {
+        opacity: 0.5;
+      }
+    }
+  }
+}

@@ -18,8 +18,15 @@ class ScrollContainer extends Component {
 
         this.scrollToTop = this.scrollToTop.bind(this);
         this.scrollAction = this.scrollAction.bind(this);
+        this.scrollInput = this.scrollInput.bind(this);
+
+        //android 需要适配
+        if (navigator.platform !== 'iPhone' && navigator.platform !== 'iPad') {
+            document.addEventListener('touchend', this.scrollInput, {passive: false});
+        }
 
         this.timer = null;
+        this.scrollTop = 0;
     }
 
     scrollToTop() {
@@ -32,6 +39,24 @@ class ScrollContainer extends Component {
         }, 10);
     }
 
+    scrollInput(event) {
+        if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+            event.target.focus();
+
+            let offsetTop = Math.max(event.changedTouches[0].clientY - window.screen.height / 2, 0);
+            this.refs.wrapper.style.height = '150%';
+            this.scrollTop = this.refs.scrollContainer.scrollTop;
+            setTimeout(() => Boolean(this.refs.scrollContainer) && (this.refs.scrollContainer.scrollTop = offsetTop), 100);
+        } else if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
+            document.activeElement.blur();
+            setTimeout(() => {
+                Boolean(this.refs.scrollContainer) && (this.refs.scrollContainer.scrollTop = this.scrollTop);
+                Boolean(this.refs.wrapper) && (this.refs.wrapper.style.height = '100%');
+            }, 100);
+        }
+        event.stopPropagation();
+    }
+
     scrollAction(event) {
         if (this.props.direction === 'vertical' &&
             this.props.needScrollToTop) {
@@ -41,9 +66,8 @@ class ScrollContainer extends Component {
             } else if (event.target.scrollTop < 1200 && this.state.displayScrollToTop === true) {
                 this.setState({displayScrollToTop: false});
             }
+            this.props.scroll(event);
         }
-
-        this.props.scroll(event);
     }
 
     render() {
@@ -57,8 +81,8 @@ class ScrollContainer extends Component {
                  className={classNames(this.props.direction === 'horizontal' ? style.horizontal : style.vertical, this.props.className)}
                  onScroll={this.scrollAction}
                  onTouchStart={() => this.timer = clearInterval(this.timer)}>
-                <div
-                    className={this.props.direction === 'horizontal' ? style.horizontalWrapper : style.verticalWrapper}>
+                <div ref={'wrapper'}
+                     className={this.props.direction === 'horizontal' ? style.horizontalWrapper : style.verticalWrapper}>
                     {this.props.children}
                 </div>
                 {scrollTopTop}
@@ -68,6 +92,7 @@ class ScrollContainer extends Component {
 
     componentWillUnmount() {
         clearInterval(this.timer);
+        document.removeEventListener('touchend', this.scrollInput);
     }
 }
 

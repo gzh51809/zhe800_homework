@@ -1,0 +1,32 @@
+.CellIcon {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 2px solid #EEE;
+
+  > div {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    color: #2b2929;
+
+    > i {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    > span {
+      font-size: 22px;
+    }
+  }
+}
+
+.boldBorder {
+  border-width: 20px;
+}
+
+.active{
+  opacity: 0.5;
+}

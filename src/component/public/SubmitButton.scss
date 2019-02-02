@@ -1,0 +1,25 @@
+.SubmitButton {
+  margin: 20px 0;
+  padding: 20px;
+  font-size: 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.enable {
+  background: #E30C26;
+  color: white;
+}
+
+.disable {
+  background: #AAA;
+  color: white;
+}
+
+.active {
+  >p{
+    background: white;
+    color: #E30C26;
+  }
+}

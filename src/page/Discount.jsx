@@ -11,7 +11,7 @@ import {
     Header,
     Carousel,
     TopTab,
-    IconArea, ScrollToTop
+    IconArea
 } from "../component/public";
 import {
     AdArea,
@@ -22,8 +22,6 @@ import {
     ListContainer
 } from '../component/good';
 import base from "../scss/base.scss";
-import classNames from "classnames";
-
 
 class Discount extends Component {
     constructor() {
@@ -82,6 +80,7 @@ class Discount extends Component {
 
         return (
             <TabBarContainer tabId={'discount'}
+                             tabs={this.props.tabs}
                              scroll={this.scrollSticky}
                              selectTab={(item) => this.props.history.push(item.id)}
                              needScrollToTop={true}>

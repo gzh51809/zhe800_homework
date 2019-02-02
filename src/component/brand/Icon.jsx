@@ -11,11 +11,11 @@ import style from './Icon.scss';
 class Icon extends Component {
     render() {
         return (
-            <TouchBox className={this.props.icon.select ? classNames(style.Icon, style.active) : classNames(style.Icon, style.default)}
+            <TouchBox className={style.Icon}
                       activeClass={style.IconActive}
                       tab={this.props.clickItem}>
                 <img src={this.props.icon.iconSrc} alt="加载失败"/>
-                <p>{this.props.icon.iconName}</p>
+                <p className={this.props.icon.select ? style.active : style.default}>{this.props.icon.iconName}</p>
             </TouchBox>
         )
     }

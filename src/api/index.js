@@ -7,6 +7,8 @@ import requestDiscountCollection from './requestDiscountCollection';
 import requestDiscountList from './requestDiscountList';
 import requestBrandKind from './requestBrandKind';
 import requestBrandList from './requestBrandList';
+import requestAuth from './requestAuth';
+import requestLogin from './requestLogin';
 
 export {
     requestKind,
@@ -17,5 +19,7 @@ export {
     requestDiscountCollection,
     requestDiscountList,
     requestBrandKind,
-    requestBrandList
+    requestBrandList,
+    requestAuth,
+    requestLogin
 }

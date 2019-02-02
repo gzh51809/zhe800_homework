@@ -8,7 +8,6 @@ import {
     clickBanner,
     clickTab,
     clickIcon,
-    clickAd,
     clickGood
 } from '../../action/Home';
 
@@ -17,6 +16,13 @@ import apiConfig from '../../api/config';
 import * as TopBar from './TopBar';
 
 let defaultState = {
+    tabs: [
+        {id: 'home', icon: "icon-jinritemai", name: '今日特卖'},
+        {id: 'discount', icon: "icon-taotejia", name: '淘特价'},
+        {id: 'brand', icon: "icon-pinpaituan", name: '品牌团'},
+        {id: 'car', icon: "icon-gouwuche", name: '购物车'},
+        {id: 'my', icon: "icon-wode", name: '我的'},
+    ],
     kindData: [],
     topTapData: [],
     topTabWrapperData: [],
@@ -169,8 +175,6 @@ export default (state = defaultState, action) => {
             return cloneState;
         }
         case clickIcon:
-            return {...state};
-        case clickAd:
             return {...state};
         case clickGood:
             return {...state};

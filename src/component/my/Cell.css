@@ -1,0 +1,27 @@
+.Cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border-bottom: 2px solid #EEE; }
+  .Cell > p {
+    font-size: 30px;
+    color: #333; }
+  .Cell > div {
+    display: flex;
+    align-items: center; }
+    .Cell > div > p {
+      font-size: 26px;
+      color: #333;
+      margin-right: 10px; }
+    .Cell > div > i {
+      font-size: 24px;
+      color: #666; }
+
+.boldBorder {
+  border-width: 20px; }
+
+.active {
+  background: #EEE; }
+
+/*# sourceMappingURL=Cell.css.map */
