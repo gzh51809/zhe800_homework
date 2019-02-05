@@ -1,0 +1,101 @@
+.BrandSubject {
+  border-bottom: 25px solid #EEE;
+  padding: 40px 30px; }
+  .BrandSubject > div.subject {
+    display: flex;
+    align-items: center; }
+    .BrandSubject > div.subject > div.left {
+      width: 80%;
+      box-sizing: border-box; }
+      .BrandSubject > div.subject > div.left > div {
+        display: flex; }
+        .BrandSubject > div.subject > div.left > div > img {
+          display: block;
+          width: 90px;
+          height: 90px;
+          box-sizing: border-box;
+          border: 2px solid #EEE;
+          object-fit: contain;
+          object-position: center;
+          margin-right: 20px; }
+        .BrandSubject > div.subject > div.left > div > div {
+          flex: 1;
+          padding: 5px 0;
+          box-sizing: border-box;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-between;
+          height: 90px; }
+          .BrandSubject > div.subject > div.left > div > div > h2 {
+            font-size: 26px;
+            color: #333; }
+          .BrandSubject > div.subject > div.left > div > div > h3 {
+            font-size: 24px;
+            color: #AAA; }
+    .BrandSubject > div.subject > h3 {
+      width: 20%;
+      box-sizing: border-box;
+      padding: 0 30px;
+      display: flex;
+      flex-flow: column;
+      align-items: center; }
+      .BrandSubject > div.subject > h3 > i {
+        font-size: 40px;
+        padding: 10px; }
+      .BrandSubject > div.subject > h3 > i.collect {
+        color: #666; }
+      .BrandSubject > div.subject > h3 > i.collected {
+        color: #ffd649; }
+      .BrandSubject > div.subject > h3 > span {
+        text-align: center;
+        font-size: 22px;
+        color: #333; }
+    .BrandSubject > div.subject > h3.active > i {
+      color: #ffd649; }
+  .BrandSubject > h2 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333; }
+    .BrandSubject > h2 > span {
+      color: #FF4645;
+      border: 2px solid #FF4645;
+      line-height: 22px;
+      font-size: 20px;
+      padding: 0 5px;
+      margin-right: 10px; }
+  .BrandSubject > div.coupon {
+    margin-top: 40px;
+    background: #FFF url("../../image/coupon.png") no-repeat center/contain;
+    display: flex;
+    padding: 20px 40px; }
+    .BrandSubject > div.coupon > h2 {
+      font-size: 46px;
+      color: #2B292A; }
+      .BrandSubject > div.coupon > h2 > span {
+        font-size: 30px;
+        margin-right: 5px; }
+    .BrandSubject > div.coupon > div {
+      flex: 1;
+      align-items: center;
+      padding: 0 40px; }
+      .BrandSubject > div.coupon > div > h2 {
+        font-size: 24px;
+        color: #2B292A;
+        margin-bottom: 5px; }
+      .BrandSubject > div.coupon > div > h3 {
+        font-size: 22px;
+        color: #8D8B8C; }
+    .BrandSubject > div.coupon > p {
+      border-radius: 10px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: 600;
+      padding: 10px 30px;
+      background: #ff464c; }
+    .BrandSubject > div.coupon > p.getCoupon {
+      color: #ff464c;
+      background: #FFF; }
+
+/*# sourceMappingURL=BrandSubject.css.map */

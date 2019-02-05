@@ -1,9 +1,3 @@
-import axios from 'axios';
-import config from './config';
+import services from "./services";
 
-export default data => axios({
-    method: 'post',
-    url: `http://${location.hostname}:${config.serverPort}/zhe800/requestDiscountList`,
-    header: {'Content-Type': 'application/json'},
-    data: data
-});
+export default data => services({url: 'requestDiscountList', data: data});

@@ -68,18 +68,18 @@ class Home extends Component {
     clickAdArea(item) {
         switch (item.type) {
             case 'rightTop':
-                this.props.history.push('/brand');
+                this.props.history.push({pathname: 'brand'});
                 break;
         }
     }
 
     render() {
-        let listElements = this.props.currentList.map((json, index) => (
-            <GoodItem1 key={json._id} good={json}
-                       clickItem={item => this.props.dispatch({
-                           type: action.clickGood,
-                           payload: item
-                       })}/>
+        let listElements = this.props.currentList.map(json => (
+            <GoodItem1 key={json._id}
+                       good={json}
+                       clickItem={item => {
+                           this.props.history.push({pathname: 'brandDetail', search: `brandId=${item.brandId}`});
+                       }}/>
         ));
 
         return (

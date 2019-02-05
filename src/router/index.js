@@ -2,7 +2,6 @@ import React from 'react';
 import Loadable from "react-loadable";
 import {Loading} from '../component/global';
 import {
-    HashRouter,
     Switch,
     Route,
     Redirect
@@ -27,30 +26,27 @@ const SetPassword = Loadable({
     loader: () => import(/* webpackChunkName: "SetPassword" */ '../page/SetPassword'),
     loading: Loading
 });
-const Register = Loadable({
-    loader: () => import(/* webpackChunkName: "Register" */ '../page/Register'),
-    loading: Loading
-});
 const Help = Loadable({
     loader: () => import(/* webpackChunkName: "Help" */ '../page/Help'),
     loading: Loading
 });
-
+const BrandDetail = Loadable({
+    loader: () => import(/* webpackChunkName: "BrandDetail" */ '../page/BrandDetail'),
+    loading: Loading
+});
 
 export default (
-    <HashRouter>
-        <Switch>
-            <Route key={'home'} path={'/home'} component={Home}/>
-            <Route key={'discount'} path={'/discount'} component={Discount}/>
-            <Route key={'brand'} path={'/brand'} component={Brand}/>
-            <Route key={'car'} path={'/car'} component={Car}/>
-            <Route key={'my'} path={'/my'} component={My}/>
-            <Route key={'search'} path={'/search'} component={Search}/>
-            <Route key={'login'} path={'/login'} component={Login}/>
-            <Route key={'setPassword'} path={'/setPassword'} component={SetPassword}/>
-            <Route key={'register'} path={'/register'} component={Register}/>
-            <Route key={'help'} path={'/help'} component={Help}/>
-            <Redirect from={'/'} to={'/home'}/>
-        </Switch>
-    </HashRouter>
+    <Switch>
+        <Route key={'home'} path={'/home'} component={Home}/>
+        <Route key={'discount'} path={'/discount'} component={Discount}/>
+        <Route key={'brand'} path={'/brand'} component={Brand}/>
+        <Route key={'car'} path={'/car'} component={Car}/>
+        <Route key={'my'} path={'/my'} component={My}/>
+        <Route key={'search'} path={'/search'} component={Search}/>
+        <Route key={'login'} path={'/login'} component={Login}/>
+        <Route key={'setPassword'} path={'/setPassword'} component={SetPassword}/>
+        <Route key={'help'} path={'/help'} component={Help}/>
+        <Route key={'brandDetail'} path={'/brandDetail'} component={BrandDetail}/>
+        <Redirect from={'/'} to={'/home'}/>
+    </Switch>
 );

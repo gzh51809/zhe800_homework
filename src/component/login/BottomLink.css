@@ -1,0 +1,32 @@
+.BottomLinkMobile {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+  .BottomLinkMobile > p {
+    padding: 10px 0;
+    color: #666;
+    font-size: 24px; }
+  .BottomLinkMobile > a {
+    padding: 10px 0;
+    color: #AAA;
+    text-decoration: underline;
+    font-size: 24px; }
+  .BottomLinkMobile > a.active {
+    color: blue; }
+
+.BottomLinkAccount {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+  .BottomLinkAccount > span {
+    padding: 10px 0;
+    color: #E30C26;
+    font-size: 24px; }
+  .BottomLinkAccount > a {
+    padding: 10px 0;
+    color: #AAA;
+    font-size: 24px; }
+  .BottomLinkAccount > .active {
+    opacity: 0.5; }
+
+/*# sourceMappingURL=BottomLink.css.map */

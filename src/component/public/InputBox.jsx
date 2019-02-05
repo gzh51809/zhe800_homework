@@ -33,8 +33,10 @@ class InputBox extends Component {
             interval = Math.max(Math.trunc((item.countEndDate - Date.now()) / 1000), 0);
             if (!Boolean(interval)) {
                 clearInterval(this.timer);
+                this.setState({interval: 0}, () => this.props.timerStop());
+            } else {
+                this.setState({interval});
             }
-            this.setState({interval});
         }, 500);
     }
 
@@ -53,10 +55,10 @@ class InputBox extends Component {
         );
 
         let rightIcon = (
-            <TouchBox tagName={'span'}
+            <TouchBox tagName={'h4'}
                       tab={() => this.props.clickRightIcon()}
-                      className={classNames(icon[item.rightIcon], style.rightIcon)}
                       activeClass={style.active}>
+                <i className={classNames(icon[item.rightIcon], style.rightIcon)}></i>
             </TouchBox>
         );
 
@@ -90,17 +92,29 @@ class InputBox extends Component {
 }
 
 InputBox.propTypes = {
-    item: PropTypes.object,
+    item: PropTypes.shape({
+        icon: PropTypes.string,
+        placeholder: PropTypes.string,
+        inputType: PropTypes.string,
+        value: PropTypes.string,
+        regExp: PropTypes.instanceOf(RegExp),
+        toast: PropTypes.string,
+        rightButton: PropTypes.string,
+        rightButtonEnable: PropTypes.bool,
+        countEndDate: PropTypes.number
+    }),
     input: PropTypes.func,
     clickRightButton: PropTypes.func,
-    clickRightIcon: PropTypes.func
+    clickRightIcon: PropTypes.func,
+    timerStop: PropTypes.func
 };
 
 InputBox.defaultProps = {
     item: {},
     input: () => {},
     clickRightButton: () => {},
-    clickRightIcon: () => {}
+    clickRightIcon: () => {},
+    timerStop: () => {}
 };
 
 export default InputBox;

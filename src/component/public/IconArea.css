@@ -10,7 +10,6 @@
     justify-content: center;
     align-items: center; }
     .IconArea .icon > img {
-      border-radius: 100%;
       display: block;
       width: 80%;
       object-fit: contain;

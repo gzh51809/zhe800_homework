@@ -17,7 +17,7 @@ class GoodItem2 extends Component {
                       tab={() => this.props.clickItem(this.props.good)}>
                 <div style={{backgroundImage: `url('${this.props.good.fengmianSrc}')`}}>
                     <h2>{this.props.good.name}</h2>
-                    <h3>¥<span>{Math.trunc(this.props.good.price)}</span>{Boolean(this.props.good.price - Math.trunc(this.props.good.price)) && ('.' + String(this.props.good.price).replace(/(\d*\.)/g, ''))}</h3>
+                    <h3>&yen;<span>{Math.trunc(this.props.good.price)}</span>{Boolean(this.props.good.price - Math.trunc(this.props.good.price)) && ('.' + String(this.props.good.price).replace(/(\d*\.)/g, ''))}</h3>
                 </div>
             </TouchBox>
         );
@@ -25,7 +25,11 @@ class GoodItem2 extends Component {
 }
 
 GoodItem2.propTypes = {
-    good: PropTypes.object,
+    good: PropTypes.shape({
+        fengmianSrc: PropTypes.string,
+        name: PropTypes.string,
+        price: PropTypes.string
+    }),
     clickItem: PropTypes.func
 };
 

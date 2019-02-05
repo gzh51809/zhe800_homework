@@ -7,8 +7,7 @@ import {
     pushKind,
     clickBanner,
     clickTab,
-    clickIcon,
-    clickGood
+    clickIcon
 } from '../../action/Home';
 
 import apiConfig from '../../api/config';
@@ -175,8 +174,6 @@ export default (state = defaultState, action) => {
             return cloneState;
         }
         case clickIcon:
-            return {...state};
-        case clickGood:
             return {...state};
         default:
             return {...state};

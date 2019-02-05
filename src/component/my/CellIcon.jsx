@@ -32,7 +32,12 @@ class CellIcon extends Component {
 }
 
 CellIcon.propTypes = {
-    item: PropTypes.object,
+    item: PropTypes.shape({
+        id: PropTypes.string,
+        icon: PropTypes.string,
+        name: PropTypes.string,
+        needBoldBottom: PropTypes.bool
+    }),
     clickIcon: PropTypes.func
 };
 

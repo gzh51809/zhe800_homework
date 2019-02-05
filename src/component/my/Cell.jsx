@@ -28,7 +28,11 @@ class Cell extends Component {
 }
 
 Cell.propTypes = {
-    item: PropTypes.object,
+    item: PropTypes.shape({
+        needBoldBottom: PropTypes.bool,
+        left: PropTypes.string,
+        right: PropTypes.string,
+    }),
     clickCell: PropTypes.func,
 };
 

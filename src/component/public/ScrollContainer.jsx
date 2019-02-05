@@ -43,16 +43,16 @@ class ScrollContainer extends Component {
         if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
             event.target.focus();
 
-            let offsetTop = Math.max(event.changedTouches[0].clientY - window.screen.height / 2, 0);
-            this.refs.wrapper.style.height = '150%';
-            this.scrollTop = this.refs.scrollContainer.scrollTop;
-            setTimeout(() => Boolean(this.refs.scrollContainer) && (this.refs.scrollContainer.scrollTop = offsetTop), 100);
+            // let offsetTop = Math.max(event.changedTouches[0].clientY - window.screen.height / 2, 0);
+            // this.refs.wrapper.style.height = '150%';
+            // this.scrollTop = this.refs.scrollContainer.scrollTop;
+            // setTimeout(() => Boolean(this.refs.scrollContainer) && (this.refs.scrollContainer.scrollTop = offsetTop), 100);
         } else if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
-            document.activeElement.blur();
-            setTimeout(() => {
-                Boolean(this.refs.scrollContainer) && (this.refs.scrollContainer.scrollTop = this.scrollTop);
-                Boolean(this.refs.wrapper) && (this.refs.wrapper.style.height = '100%');
-            }, 100);
+            // document.activeElement.blur();
+            // setTimeout(() => {
+            //     Boolean(this.refs.scrollContainer) && (this.refs.scrollContainer.scrollTop = this.scrollTop);
+            //     Boolean(this.refs.wrapper) && (this.refs.wrapper.style.height = '100%');
+            // }, 100);
         }
         event.stopPropagation();
     }
@@ -105,8 +105,7 @@ ScrollContainer.propTypes = {
 ScrollContainer.defaultProps = {
     needScrollToTop: false,
     direction: 'vertical',
-    scroll: (() => {
-    })
+    scroll: (() => {})
 };
 
 export default ScrollContainer;

@@ -3,8 +3,7 @@ import {
     responseList,
 
     clickTab,
-    clickIcon,
-    clickDetail
+    clickIcon
 } from '../action/Brand';
 import apiConfig from "../api/config";
 
@@ -80,8 +79,6 @@ export default (state = defaultState, action) => {
             cloneState.currentList = cloneState.listData.filter(item => item.kindId === cloneState.selectIcon.kindId && item.iconId === cloneState.selectIcon.iconId);
             return cloneState;
         }
-        case clickDetail:
-            return {...state};
         default:
             return {...state};
     }

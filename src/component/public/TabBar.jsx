@@ -31,7 +31,10 @@ class TabBar extends Component {
 }
 
 TabBar.propTypes = {
-    tabs: PropType.array,
+    tabs: PropType.arrayOf(PropType.shape({
+        id: PropType.string,
+        name: PropType.string
+    })),
     selectId: PropType.string,
     clickTab: PropType.func
 };

@@ -22,7 +22,11 @@ class Icon extends Component {
 }
 
 Icon.propTypes = {
-    icon: PropTypes.object,
+    icon: PropTypes.shape({
+        iconSrc: PropTypes.string,
+        iconName: PropTypes.string,
+        select: PropTypes.bool
+    }),
     clickItem: PropTypes.func
 };
 

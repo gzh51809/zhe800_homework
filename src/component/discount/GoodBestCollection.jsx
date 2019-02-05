@@ -32,7 +32,11 @@ class GoodBestCollection extends Component {
 }
 
 GoodBestCollection.propTypes = {
-    goods: PropTypes.array,
+    goods: PropTypes.arrayOf(PropTypes.shape({
+        fengmianSrc: PropTypes.string,
+        name: PropTypes.string,
+        price: PropTypes.string
+    })),
     clickItem: PropTypes.func
 };
 

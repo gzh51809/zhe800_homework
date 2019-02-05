@@ -18,7 +18,7 @@ router.post('/requestAuth', bodyParser.json(), async (request, response) => {
         if (result.length === 0) {
             result = await insertOne({
                 collection: database.db('zhe800').collection('user'),
-                query: query
+                query: {...query, register: '0'}
             });
             if (result.insertedCount === 1) {
                 response.send({...responseSuccess(), ...{authCode: query.authCode}});
@@ -29,7 +29,7 @@ router.post('/requestAuth', bodyParser.json(), async (request, response) => {
             result = await updateOne({
                 collection: database.db('zhe800').collection('user'),
                 query: {mobile: request.body.mobile},
-                update: {$set: query}
+                update: {$set: {mobile: query.mobile, authCode: query.authCode}}
             });
             if (result.modifiedCount === 1) {
                 response.send({...responseSuccess(), ...{authCode: query.authCode}});

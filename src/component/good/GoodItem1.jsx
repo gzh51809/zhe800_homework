@@ -25,7 +25,12 @@ class GoodItem1 extends Component {
 }
 
 GoodItem1.propTypes = {
-    good: PropTypes.object,
+    good: PropTypes.shape({
+        fengmianSrc: PropTypes.string,
+        fieldName: PropTypes.string,
+        name: PropTypes.string,
+        discount: PropTypes.string
+    }),
     clickItem: PropTypes.func
 };
 

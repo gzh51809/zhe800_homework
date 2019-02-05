@@ -29,7 +29,10 @@ class TabBarContainer extends Component {
 }
 
 TabBarContainer.propTypes = {
-    tabs: PropType.array,
+    tabs: PropType.arrayOf(PropType.shape({
+        id: PropType.string,
+        name: PropType.string
+    })),
     tabId: PropType.string,
     selectTab: PropType.func,
     scroll: PropType.func,

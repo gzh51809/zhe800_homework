@@ -1,0 +1,44 @@
+.BottomLinkMobile {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  > p {
+    padding: 10px 0;
+    color: #666;
+    font-size: 24px;
+  }
+
+  > a {
+    padding: 10px 0;
+    color: #AAA;
+    text-decoration: underline;
+    font-size: 24px;
+  }
+
+  > a.active {
+    color: blue;
+  }
+}
+
+.BottomLinkAccount {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  > span {
+    padding: 10px 0;
+    color: #E30C26;
+    font-size: 24px;
+  }
+
+  > a {
+    padding: 10px 0;
+    color: #AAA;
+    font-size: 24px;
+  }
+
+  > .active {
+    opacity: 0.5;
+  }
+}

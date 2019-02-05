@@ -21,11 +21,11 @@ class GoodItem3 extends Component {
                         {this.props.good.name}
                     </h2>
                     <div className={style.section}>
-                        <h3>¥
+                        <h3>&yen;
                             <span>{Math.trunc(this.props.good.price)}</span>
                             {Boolean(this.props.good.price - Math.trunc(this.props.good.price)) && ('.' + String(this.props.good.price).replace(/(\d*\.)/g, ''))}
                             <i>{this.props.good.afterDiscount}</i>
-                            <del>{Boolean(this.props.good.originPrice) && '¥' + this.props.good.originPrice}</del>
+                            <del>{Boolean(this.props.good.originPrice) && '&yen;' + this.props.good.originPrice}</del>
                         </h3>
                         <p>{this.props.good.containPostage}</p>
                     </div>
@@ -45,14 +45,25 @@ class GoodItem3 extends Component {
 }
 
 GoodItem3.propTypes = {
-    good: PropTypes.object,
+    good: PropTypes.shape({
+        fengmianSrc: PropTypes.string,
+        isNew: PropTypes.string,
+        originPrice: PropTypes.string,
+        afterDiscount: PropTypes.string,
+        name: PropTypes.string,
+        price: PropTypes.string,
+        containPostage: PropTypes.string,
+        saleAmount: PropTypes.string,
+        linkName: PropTypes.string,
+        coupon: PropTypes.string
+    }),
     clickItem: PropTypes.func
 };
 
 GoodItem3.defaultProps = {
     good: {
         fengmianSrc: '',
-        isNew: false,
+        isNew: '',
         originPrice: '',
         afterDiscount: '',
         name: '--',
@@ -62,8 +73,7 @@ GoodItem3.defaultProps = {
         linkName: '',
         coupon: ''
     },
-    clickItem: () => {
-    }
+    clickItem: () => {}
 };
 
 export default GoodItem3;

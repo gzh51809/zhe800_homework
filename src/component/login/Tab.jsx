@@ -32,16 +32,21 @@ class Tab extends Component {
 }
 
 Tab.propTypes = {
-    items: PropTypes.array,
-    selectItem: PropTypes.object,
+    items: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string
+    })),
+    selectItem: PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string
+    }),
     clickTab: PropTypes.func,
 };
 
 Tab.defaultProps = {
     items: [],
     selectItem: {},
-    clickTab: () => {
-    },
+    clickTab: () => {},
 };
 
 export default Tab;

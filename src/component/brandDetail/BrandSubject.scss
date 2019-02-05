@@ -1,0 +1,147 @@
+.BrandSubject {
+  border-bottom: 25px solid #EEE;
+  padding: 40px 30px;
+  > div.subject {
+    display: flex;
+    align-items: center;
+
+    > div.left {
+      width: 80%;
+      box-sizing: border-box;
+
+      > div {
+        display: flex;
+
+        > img {
+          display: block;
+          width: 90px;
+          height: 90px;
+          box-sizing: border-box;
+          border: 2px solid #EEE;
+          object-fit: contain;
+          object-position: center;
+          margin-right: 20px;
+        }
+
+        > div {
+          flex: 1;
+          padding: 5px 0;
+          box-sizing: border-box;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-between;
+          height: 90px;
+
+          > h2 {
+            font-size: 26px;
+            color: #333;
+          }
+
+          > h3 {
+            font-size: 24px;
+            color: #AAA;
+          }
+        }
+      }
+    }
+
+    > h3 {
+      width: 20%;
+      box-sizing: border-box;
+      padding: 0 30px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+
+      > i {
+        font-size: 40px;
+        padding: 10px;
+      }
+
+      > i.collect {
+        color: #666;
+      }
+
+      > i.collected {
+        color: #ffd649;
+      }
+
+      > span {
+        text-align: center;
+        font-size: 22px;
+        color: #333;
+      }
+    }
+
+    > h3.active {
+      > i {
+        color: #ffd649;
+      }
+    }
+  }
+
+  > h2 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+
+    > span {
+      color: #FF4645;
+      border: 2px solid #FF4645;
+      line-height: 22px;
+      font-size: 20px;
+      padding: 0 5px;
+      margin-right: 10px;
+    }
+  }
+
+  > div.coupon {
+    margin-top: 40px;
+    background: #FFF url("../../image/coupon.png") no-repeat center/contain;
+    display: flex;
+    padding: 20px 40px;
+
+    > h2 {
+      font-size: 46px;
+      color: #2B292A;
+
+      > span {
+        font-size: 30px;
+        margin-right: 5px;
+      }
+    }
+
+    > div {
+      flex: 1;
+      align-items: center;
+      padding: 0 40px;
+
+      > h2 {
+        font-size: 24px;
+        color: #2B292A;
+        margin-bottom: 5px;
+      }
+
+      > h3 {
+        font-size: 22px;
+        color: #8D8B8C;
+      }
+    }
+
+    > p {
+      border-radius: 10px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: 600;
+      padding: 10px 30px;
+      background: #ff464c;
+    }
+
+    > p.getCoupon {
+      color: #ff464c;
+      background: #FFF;
+    }
+  }
+}

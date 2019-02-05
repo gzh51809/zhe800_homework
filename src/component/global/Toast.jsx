@@ -10,22 +10,40 @@ class Toast extends Component {
     constructor() {
         super();
         this.state = {
-            theClass: classNames(style.Toast, style.hideToast)
+            theClass: style.hideToast,
+            toastString: ''
         };
+        this.timer = null;
+        this.toast = '';
+        this.hideDate = Date.now();
+    }
+
+    componentWillMount() {
+        this.timer = setInterval(() => {
+            let interval = Math.max(this.hideDate - Date.now(), 0);
+            if (interval === 0 &&
+                this.state.theClass === classNames(style.Toast, style.showToast)) {
+                this.setState({
+                    toastString: this.toast,
+                    theClass: style.hideToast
+                });
+            } else if (interval !== 0 &&
+                this.state.theClass === style.hideToast) {
+                this.setState({
+                    toastString: this.toast,
+                    theClass: classNames(style.Toast, style.showToast),
+                });
+            }
+        }, 200);
     }
 
     showToast(toastString) {
-        this.setState({
-            theClass: classNames(style.Toast, style.showToast),
-            toastString
-        });
-        setTimeout(() => this.closeToast(), 3000);
+        this.toast = toastString;
+        this.hideDate = Date.now() + 3000;
     }
 
     closeToast() {
-        this.setState({
-            theClass: classNames(style.Toast, style.hideToast)
-        })
+        this.hideDate = Date.now() - 1000;
     }
 
     render() {
@@ -36,9 +54,15 @@ class Toast extends Component {
             </div>
         );
     }
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
+        this.timer = null;
+    }
 }
 
-let div = document.getElementById('public');
+let div = document.createElement('div');
+document.body.appendChild(div);
 let ToastEle = render(<Toast/>, div);
 
 export {

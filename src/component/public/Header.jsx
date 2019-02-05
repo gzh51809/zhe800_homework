@@ -50,8 +50,14 @@ class Header extends Component {
 
 Header.propTypes = {
     title: PropTypes.string,
-    leftConfig: PropTypes.array,
-    rightConfig: PropTypes.array,
+    leftConfig: PropTypes.arrayOf(PropTypes.shape({
+        icon: PropTypes.string,
+        title: PropTypes.string
+    })),
+    rightConfig: PropTypes.arrayOf(PropTypes.shape({
+        icon: PropTypes.string,
+        title: PropTypes.string
+    })),
     clickHeaderButton: PropTypes.func
 };
 

@@ -61,9 +61,9 @@ class Brand extends Component {
         let currentList = this.props.currentList.map(item => (
             <BrandCard brand={item}
                        key={item.brandId}
-                       clickItem={() => this.props.dispatch({
-                           type: action.clickDetail,
-                           payload: item
+                       clickItem={() => this.props.history.push({
+                           pathname: 'brandDetail',
+                           search: `brandId=${item.brandId}`
                        })}/>
         ));
 

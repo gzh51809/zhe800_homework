@@ -53,11 +53,14 @@
       }
     }
 
-    > span.rightIcon {
-      font-size: 28px;
-      padding: 20px 0 20px 60px;
-      text-align: center;
-      color: #AAA;
+    > h4 {
+      > i.rightIcon {
+        display: block;
+        font-size: 32px;
+        padding: 20px 0 20px 60px;
+        text-align: center;
+        color: #AAA;
+      }
     }
 
   }

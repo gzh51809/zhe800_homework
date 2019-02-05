@@ -36,7 +36,7 @@ class My extends Component {
                              tabs={this.props.tabs}
                              selectTab={(item) => this.props.history.push(item.id)}>
                 <Header clickLogin={() => this.props.history.push('/login')}
-                        clickRegister={() => this.props.history.push('/register')}/>
+                        clickRegister={() => this.props.history.push('/login')}/>
                 {cells}
             </TabBarContainer>
         );

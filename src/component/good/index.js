@@ -8,12 +8,14 @@ import ListContainer from './ListContainer';
 import GoodItem1 from './GoodItem1';
 import GoodItem2 from './GoodItem2';
 import GoodItem3 from './GoodItem3';
+import GoodItem4 from './GoodItem4';
 
 export {
     ListContainer,
     GoodItem1,
     GoodItem2,
-    GoodItem3
+    GoodItem3,
+    GoodItem4
 }
 
 

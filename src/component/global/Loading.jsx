@@ -37,7 +37,8 @@ class Loading extends Component {
     }
 }
 
-let div = document.getElementById('public');
+let div = document.createElement('div');
+document.body.appendChild(div);
 let LoadingEle = render(<Loading/>, div);
 LoadingEle.hideLoading();
 

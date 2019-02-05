@@ -27,7 +27,10 @@ class AdArea extends Component {
 }
 
 AdArea.propTypes = {
-    ads: PropTypes.array,
+    ads: PropTypes.arrayOf(PropTypes.shape({
+        _id: PropTypes.string,
+        adSrc: PropTypes.string
+    })),
     clickItem: PropTypes.func
 };
 

@@ -1,6 +1,8 @@
 import React, {
     Component
 } from 'react';
+import {connect} from 'react-redux';
+import cipher from '../js/oneWayCipher';
 
 import {
     Header,
@@ -9,17 +11,18 @@ import {
     SubmitButton,
 } from '../component/public';
 
-import {
-    ToastEle
-} from '../component/global';
+import {ToastEle} from '../component/global';
+
+import {Tab, BottomLink} from '../component/login';
 
 import {
-    Tab,
-} from '../component/login';
-
-import * as action from '../action/Login';
+    requestAuth,
+    requestLogin
+} from '../api';
 
 import userTop from '../image/userTop.png';
+
+import style from '../component/login/Login.scss';
 
 class Login extends Component {
     constructor() {
@@ -63,7 +66,7 @@ class Login extends Component {
                 inputType: 'password',
                 value: '',
                 regExp: /^.*(?=.{6,16})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[\!\@\#\$\%\^\&\*\?\(\)]).*$/,
-                toast: '密码必须含有一个大写、一个小写、一个特殊字符，长度为6到16位',
+                toast: '密码必须含有一个大写、一个小写、一个特殊字符，一个数字长度为6到16位',
                 rightIcon: 'icon-biyanjing',
             },
             enableSubmit: false
@@ -73,6 +76,7 @@ class Login extends Component {
         this.selectTab = this.selectTab.bind(this);
     }
 
+    //-----------交互逻辑-----------
     clickHeaderAction(item) {
         switch (item.id) {
             case 'back':
@@ -96,7 +100,9 @@ class Login extends Component {
         }
         this.setState({selectTab: item, enableSubmit}, () => {
             if (this.state.selectTab.id === 'mobile') {
-                this.refs.auth.counterStart()
+                authCode.rightButtonEnable = formMobile.regExp.test(formMobile.value);
+                this.setState({authCode});
+                this.refs.auth.counterStart();
             }
         });
     }
@@ -126,12 +132,23 @@ class Login extends Component {
                           enableSubmit = formMobile.regExp.test(formMobile.value) && authCode.regExp.test(authCode.value);
                           this.setState({authCode, enableSubmit});
                       }}
-                      clickRightButton={() => {
-                          let {authCode} = this.state;
-                          authCode.rightButtonEnable = false;
-                          authCode.countEndDate = Date.now() + 120 * 1000;
+                      clickRightButton={() => requestAuth({mobile: this.state.formMobile.value})
+                          .then(
+                              data => {
+                                  //开始倒计时
+                                  ToastEle.showToast(`验证码是:${data.authCode}`);
+                                  let {authCode} = this.state;
+                                  authCode.rightButtonEnable = false;
+                                  authCode.countEndDate = Date.now() + 120 * 1000;
+                                  this.setState({authCode});
+                                  this.refs.auth.counterStart();
+                              })
+                          .catch(error => ToastEle.showToast(error.message))
+                      }
+                      timerStop={() => {
+                          let {formMobile, authCode} = this.state;
+                          authCode.rightButtonEnable = formMobile.regExp.test(formMobile.value);
                           this.setState({authCode});
-                          this.refs.auth.counterStart();
                       }}/>
         );
 
@@ -173,14 +190,50 @@ class Login extends Component {
                       }}/>
         );
 
+        let submit = (
+            <SubmitButton key={'submit'}
+                          title={'登录'}
+                          enable={this.state.enableSubmit}
+                          submit={() => {
+                              let {formMobile, authCode, user, password} = this.state;
+                              let query = {};
+                              switch (this.state.selectTab.id) {
+                                  case 'mobile':
+                                      query = {type: 'mobile', mobile: formMobile.value, authCode: authCode.value};
+                                      break;
+                                  case 'account':
+                                      query = {type: 'account', name: user.value, password: cipher(password.value)};
+                                      break;
+                              }
+
+                              requestLogin(query)
+                                  .then(data => {
+                                      //为注册，进入手机注册流程
+                                      if (data.register === '0') {
+                                          this.props.history.push('/setPassword');
+                                      } else {
+                                          this.props.history.push('/');
+                                      }
+                                  })
+                                  .catch(error => ToastEle.showToast(error.message));
+                          }}/>
+        );
+
+        let bottomLink = (
+            <BottomLink key={'bottomLink'}
+                        type={this.state.selectTab.id}
+                        clickLeft={() => this.props.history.push('/register')}/>
+        );
+
         switch (this.state.selectTab.id) {
             case 'mobile':
-                return [mobileItem, authCode];
+                return [mobileItem, authCode, submit, bottomLink];
             case 'account':
-                return [user, password];
+                return [user, password, submit, bottomLink];
         }
     }
 
+    //-----------渲染逻辑-----------
     render() {
         return (
             <ScrollContainer>
@@ -189,18 +242,17 @@ class Login extends Component {
                         rightConfig={[{id: 'help', title: '帮助'}]}
                         clickHeaderButton={this.clickHeaderAction}/>
                 <img style={{display: 'block', width: '100%'}} src={userTop} alt="加载失败"/>
-                <div style={{padding: '10px 60px'}}>
+                <div className={style.formContainer}>
                     <Tab items={this.state.tab}
                          selectItem={this.state.selectTab}
                          clickTab={item => this.selectTab(item)}/>
                     {this.renderForm()}
-                    <SubmitButton title={'登录'}
-                                  enable={this.state.enableSubmit}
-                                  submit={() => console.log('点击登录')}/>
                 </div>
             </ScrollContainer>
         );
     }
 }
+
+Login = connect(() => ({}))(Login);
 
 export default Login;

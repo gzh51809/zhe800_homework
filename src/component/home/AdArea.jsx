@@ -26,7 +26,7 @@ class AdArea extends Component {
                                   className={style.deadlinePrice}
                                   activeClass={style.active}
                                   tab={() => this.props.clickAdObject({...{type: 'leftBig'}, ...this.props.adObject})}>
-                            <span>¥</span>{this.props.deadLinePrice}
+                            <span>&yen;</span>{this.props.deadLinePrice}
                         </TouchBox>
                     </div>
                     <div>

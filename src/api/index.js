@@ -9,6 +9,9 @@ import requestBrandKind from './requestBrandKind';
 import requestBrandList from './requestBrandList';
 import requestAuth from './requestAuth';
 import requestLogin from './requestLogin';
+import requestRegister from './requestRegister';
+import requestBrandDetail from './requestBrandDetail';
+import requestBrandGoodList from './requestBrandGoodList';
 
 export {
     requestKind,
@@ -21,5 +24,8 @@ export {
     requestBrandKind,
     requestBrandList,
     requestAuth,
-    requestLogin
+    requestLogin,
+    requestRegister,
+    requestBrandDetail,
+    requestBrandGoodList
 }

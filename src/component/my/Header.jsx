@@ -39,7 +39,9 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-    user: PropTypes.object,
+    user: PropTypes.shape({
+
+    }),
     clickLogin: PropTypes.func,
     clickRegister: PropTypes.func
 };

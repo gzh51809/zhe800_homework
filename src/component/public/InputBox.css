@@ -31,8 +31,9 @@
   .InputBox > div > h3.rightButtonActive > p {
     color: #E30C26;
     background: white; }
-  .InputBox > div > span.rightIcon {
-    font-size: 28px;
+  .InputBox > div > h4 > i.rightIcon {
+    display: block;
+    font-size: 32px;
     padding: 20px 0 20px 60px;
     text-align: center;
     color: #AAA; }

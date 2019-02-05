@@ -30,7 +30,12 @@ class BrandCard extends Component {
 }
 
 BrandCard.propTypes = {
-    brand: PropTypes.object,
+    brand: PropTypes.shape({
+        brandSrc: PropTypes.string,
+        brandName: PropTypes.string,
+        brandState: PropTypes.string,
+        brandDiscount: PropTypes.string
+    }),
     clickItem: PropTypes.func
 };
 

@@ -1,7 +1,8 @@
 "use strict";
 
 const express = require('express');
-const {server:{port, log}} = require('./config');
+const {server: {port, log}} = require('./config');
+const {judgeToken, updateToken} = require('./crypto');
 
 const requestKind = require('./requestKind');
 const requestKindGoodList = require('./requestKindGoodList');
@@ -14,6 +15,9 @@ const requestBrandKind = require('./requestBrandKind');
 const requestBrandList = require('./requestBrandList');
 const requestAuth = require('./requestAuth');
 const requestLogin = require('./requestLogin');
+const requestRegister = require('./requestRegister');
+const requestBrandDetail = require('./requestBrandDetail');
+const requestBrandGoodList = require('./requestBrandGoodList');
 
 let app = express();
 //某些特殊端口如6000   Google报unsafe_port
@@ -34,14 +38,30 @@ app.all('*', (request, response, next) => {
 app.use('/zhe800/', express.static('./src/server/asset'));
 
 //------------路由配置------------
-app.use('/zhe800/', requestKind);
-app.use('/zhe800/', requestKindGoodList);
-app.use('/zhe800/', requestDiscountKind);
-app.use('/zhe800/', requestDiscountIcon);
-app.use('/zhe800/', requestDiscountAd);
-app.use('/zhe800/', requestDiscountCollection);
-app.use('/zhe800/', requestDiscountList);
-app.use('/zhe800/', requestBrandKind);
-app.use('/zhe800/', requestBrandList);
-app.use('/zhe800/', requestAuth);
-app.use('/zhe800/', requestLogin);
+app.use('/zhe800Interface/', (request, response, next) => {
+    //每次接口调用返回时，更新token
+    response.setHeader('Access-Control-Expose-Headers', 'Authorization');
+
+    let token = request.headers.authorization;
+    if (Boolean(token) && judgeToken({token})) {
+        let updated = updateToken({token});
+        response.setHeader('Authorization', updated);
+    }
+
+    next();
+});
+
+app.use('/zhe800Interface/', requestKind);
+app.use('/zhe800Interface/', requestKindGoodList);
+app.use('/zhe800Interface/', requestDiscountKind);
+app.use('/zhe800Interface/', requestDiscountIcon);
+app.use('/zhe800Interface/', requestDiscountAd);
+app.use('/zhe800Interface/', requestDiscountCollection);
+app.use('/zhe800Interface/', requestDiscountList);
+app.use('/zhe800Interface/', requestBrandKind);
+app.use('/zhe800Interface/', requestBrandList);
+app.use('/zhe800Interface/', requestAuth);
+app.use('/zhe800Interface/', requestLogin);
+app.use('/zhe800Interface/', requestRegister);
+app.use('/zhe800Interface/', requestBrandDetail);
+app.use('/zhe800Interface/', requestBrandGoodList);
