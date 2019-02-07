@@ -6,11 +6,13 @@ import PropTypes from 'prop-types';
 import {TouchBox} from '../public'
 
 import style from './GoodItem4.scss';
+import base from '../../scss/base.scss';
 import jingbaojia from '../../image/jingbaojia.png';
 
 class GoodItem4 extends Component {
     render() {
         let {good} = this.props;
+        let isShockingPrice = Boolean(good.isShockingPrice) && (<img src={jingbaojia} alt=""/>);
         return (
             <TouchBox className={style.GoodItem4}
                       activeClass={style.active}
@@ -25,7 +27,7 @@ class GoodItem4 extends Component {
                         <span>&yen;{good.originPrice}</span>
                     </h3>
                     <span>已售{Number(good.saleAmount) >= 10000 ? Math.trunc(good.saleAmount / 10000) : good.saleAmount }件</span>
-                    <img src={jingbaojia} alt=""/>
+                    {isShockingPrice}
                 </div>
             </TouchBox>
         );

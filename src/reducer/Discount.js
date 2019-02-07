@@ -5,11 +5,14 @@ import {
     clickBanner,
     clickIcon,
     clickAd,
-    clickDetail
+    clickDetail,
+    scrollDiscount
 } from '../action/Discount';
 import apiConfig from "../api/config";
 
 let defaultState = {
+    needData: true,
+    scrollTop: 0,
     tabs: [
         {id: 'home', icon: "icon-jinritemai", name: '今日特卖'},
         {id: 'discount', icon: "icon-taotejia", name: '淘特价'},
@@ -66,7 +69,7 @@ function handelData(state, action) {
         return target;
     }, cloneState.listData);
     cloneState.currentList = cloneState.listData.filter(item => item.kindId === cloneState.selectTab.kindId);
-
+    cloneState.needData = false;
     return cloneState;
 }
 
@@ -85,6 +88,12 @@ export default (state = defaultState, action) => {
         }
         case clickBanner:
             return {...state};
+        case scrollDiscount:
+        {
+            let cloneState = {...state};
+            cloneState.scrollTop = action.payload.scrollTop;
+            return cloneState;
+        }
         case clickIcon:
             return {...state};
         case clickAd:

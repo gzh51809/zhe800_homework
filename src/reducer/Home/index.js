@@ -7,7 +7,8 @@ import {
     pushKind,
     clickBanner,
     clickTab,
-    clickIcon
+    clickIcon,
+    scrollHome
 } from '../../action/Home';
 
 import apiConfig from '../../api/config';
@@ -15,6 +16,8 @@ import apiConfig from '../../api/config';
 import * as TopBar from './TopBar';
 
 let defaultState = {
+    needData: true,
+    scrollTop: 0,
     tabs: [
         {id: 'home', icon: "icon-jinritemai", name: '今日特卖'},
         {id: 'discount', icon: "icon-taotejia", name: '淘特价'},
@@ -123,6 +126,7 @@ function handelData(state, action) {
     cloneState.listData = idArray.map(id => cloneState.listData.find(item => item._id === id));
     cloneState.currentList = cloneState.listData.filter(item => item.kindId === cloneState.selectTab.kindId);
 
+    cloneState.needData = false;
     return cloneState;
 }
 
@@ -175,6 +179,12 @@ export default (state = defaultState, action) => {
         }
         case clickIcon:
             return {...state};
+        case scrollHome:
+        {
+            let cloneState = {...state};
+            cloneState.scrollTop = action.payload.scrollTop;
+            return cloneState;
+        }
         default:
             return {...state};
     }

@@ -1,0 +1,46 @@
+.Footer > span.firstLine {
+  display: block;
+  width: 100%;
+  height: 2px;
+  position: relative;
+  background: #999;
+  top: 18px; }
+.Footer > div.firstBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .Footer > div.firstBlock > p {
+    font-weight: 600;
+    line-height: 32px;
+    position: relative;
+    font-size: 30px;
+    padding: 0 20px;
+    color: #999;
+    background: #FFF; }
+.Footer > span.lastLine {
+  display: block;
+  width: 100%;
+  height: 2px;
+  position: relative;
+  background: #999;
+  top: 35px; }
+.Footer > div.lastBlock {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .Footer > div.lastBlock > i {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #999; }
+  .Footer > div.lastBlock > p {
+    font-weight: 600;
+    line-height: 30px;
+    position: relative;
+    font-size: 26px;
+    padding: 0 20px;
+    color: #999;
+    background: #FFF; }
+
+/*# sourceMappingURL=Footer.css.map */

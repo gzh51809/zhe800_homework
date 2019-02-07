@@ -46,6 +46,8 @@ class Brand extends Component {
                 isSticky: false,
             });
         }
+
+        this.props.dispatch({type: action.scrollBrand, payload:{scrollTop: event.currentTarget.scrollTop}});
     }
 
     render() {
@@ -71,6 +73,7 @@ class Brand extends Component {
             <TabBarContainer tabId={'brand'}
                              tabs={this.props.tabs}
                              scroll={this.scrollSticky}
+                             scrollTop={this.props.scrollTop}
                              selectTab={(item) => this.props.history.push(item.id)}
                              needScrollToTop={true}>
                 <Header ref={'header'} title={'品牌团'}/>

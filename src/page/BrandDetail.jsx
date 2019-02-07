@@ -17,7 +17,9 @@ import {
 
 import {
     Header,
-    BrandSubject
+    BrandSubject,
+    NoData,
+    Footer
 } from '../component/brandDetail';
 
 class BrandDetail extends Component {
@@ -28,31 +30,41 @@ class BrandDetail extends Component {
     }
 
     render() {
+        let tab = (
+            <TopTab leftTab={this.props.selectTab}
+                    tabs={this.props.tabs}
+                    clickTab={item => this.props.dispatch({
+                        type: action.clickTab,
+                        payload: item
+                    })}/>
+        );
+
+        let goods = this.props.currentList.map(item => (
+            <GoodItem4 key={item.goodId}
+                       good={item}
+                       clickItem={() => console.log(item.goodId)}/>
+        ));
+
         return (
-            <ScrollContainer needScrollToTop={true}>
+            <ScrollContainer needScrollToTop={true}
+                             scroll={event => this.props.dispatch(
+                                 {
+                                     type: action.scrollBrandDetail,
+                                     payload: {scrollTop: event.currentTarget.scrollTop}
+                                 })}
+                             scrollTop={this.props.scrollTop}>
                 <Header endTime={this.props.brandDetail.endTime}
                         clickBack={() => this.props.history.goBack()}/>
                 <BrandSubject brand={this.props.brandDetail} isCollect={false}/>
-                <TopTab leftTab={{
-                    kindId: 'jinribiqiang',
-                    kindName: '今日必抢'
-                }} tabs={[
-                    {kindId: 'jinribiqiang', kindName: '今日必抢'},
-                    {kindId: 'nvxue', kindName: '红蜻蜓女靴'},
-                    {kindId: 'nvxie', kindName: '红蜻蜓女鞋'},
-                    {kindId: 'nanxie', kindName: '红蜻蜓男鞋'},
-                    {kindId: 'baokuan', kindName: '超值爆款'},
-                ]}/>
-                <ListContainer ref={'list'}>
-                    <GoodItem4 good={{
-                        fengmianSrc: 'https://z3.tuanimg.com/imagev2/trade/800x800.7b3946bdacdc071208f023bf68df6eec.380x380.jpg.webp',
-                        isShockingPrice: '惊爆价',
-                        originPrice: '558',
-                        name: '尼班诗2018秋新款女装chic打底套头上衣白色喇叭袖毛衣针织衫女霖',
-                        price: '119',
-                        saleAmount: '182'
-                    }}/>
-                </ListContainer>
+                {goods.length === 0 ?  null : tab}
+                {
+                    goods.length === 0 ? <NoData/> : (
+                        <ListContainer ref={'list'}>
+                            {goods}
+                        </ListContainer>
+                    )
+                }
+                <Footer/>
             </ScrollContainer>
         );
     }

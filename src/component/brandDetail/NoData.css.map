@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,WAAI;EACF,UAAU,EAAE,MAAM;EAClB,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,IAAI;EACjB,MAAM,EAAE,IAAI",
+"sources": ["NoData.scss"],
+"names": [],
+"file": "NoData.css"
+}

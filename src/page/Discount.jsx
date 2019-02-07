@@ -57,6 +57,7 @@ class Discount extends Component {
                 isSticky: false,
             });
         }
+        this.props.dispatch({type: action.scrollDiscount, payload:{scrollTop: event.currentTarget.scrollTop}});
 
     }
 
@@ -82,6 +83,7 @@ class Discount extends Component {
             <TabBarContainer tabId={'discount'}
                              tabs={this.props.tabs}
                              scroll={this.scrollSticky}
+                             scrollTop={this.props.scrollTop}
                              selectTab={(item) => this.props.history.push(item.id)}
                              needScrollToTop={true}>
                 <Header ref={'header'} title={'淘特价'}/>

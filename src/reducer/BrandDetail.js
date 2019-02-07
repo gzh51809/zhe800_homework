@@ -6,10 +6,13 @@ import {
 import apiConfig from "../api/config";
 
 let defaultState = {
+    needData: true,
+    scrollTop: 0,
     brandDetail: {},
     brandAreaData: [],
     selectTab: {},
     tabs: [],
+    goodList: [],
     currentList: []
 };
 
@@ -18,6 +21,37 @@ function handleData(state, action) {
     cloneState.brandDetail = action.payload.brandDetail;
     cloneState.brandDetail.brandSrc = `http://${location.hostname}:${apiConfig.serverPort}/zhe800${action.payload.brandDetail.brandSrc}`;
 
+    //tab数据处理
+    cloneState.tabs = action.payload.goodList.reduce((target, item) => {
+        if (!target.find(json => json.kindId === item.kindId)) {
+            target.push({
+                kindId: item.kindId,
+                kindName: item.kindName,
+                kindOrder: item.kindOrder
+            });
+        }
+
+        return target;
+    }, []).sort((first, second) => first.kindOrder - second.kindOrder);
+    cloneState.selectTab = cloneState.tabs[0];
+
+    //goodList数据处理
+    cloneState.goodList = action.payload.goodList.reduce((target, item) => {
+        target.push({
+            kindId: item.kindId,
+            brandId: item.brandId,
+            fengmianSrc: `http://${location.hostname}:${apiConfig.serverPort}/zhe800${item.fengmianSrc}`,
+            isShockingPrice: item.isShockingPrice,
+            originPrice: item.originPrice,
+            name: item.name,
+            price: item.price,
+            saleAmount: item.saleAmount,
+            goodId: item.goodId
+        });
+
+        return target;
+    }, []);
+    cloneState.currentList = cloneState.goodList.filter(item => item.kindId === cloneState.selectTab.kindId);
 
     return cloneState;
 }
@@ -28,8 +62,12 @@ export default (state = defaultState, action) => {
             return handleData(state, action);
         case clickItem:
             return {...state};
-        case clickTab:
-            return {...state};
+        case clickTab: {
+            let cloneState = {...state};
+            cloneState.selectTab = action.payload;
+            cloneState.currentList = cloneState.goodList.filter(item => item.kindId === cloneState.selectTab.kindId);
+            return cloneState;
+        }
         default:
             return {...state};
     }

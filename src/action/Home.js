@@ -6,12 +6,16 @@ import {
 import {ToastEle} from "../component/global";
 
 //-------------------异步接口动作-请求-返回-------------------
-const requestData = data => dispatch => axios.all([apiRequestKind(), apiRequestGoodList(data)]).then(
-    axios.spread((kindData, listData) => dispatch({
-        type: responseData,
-        payload: {kind: kindData.list, list: listData.list}
-    }))
-).catch(error => ToastEle.showToast(error.message));  //请求首页轮播图、tab、icon、list数据
+const requestData = data => (dispatch, getState) => {
+    if (getState().home.needData) {
+        axios.all([apiRequestKind(), apiRequestGoodList(data)]).then(
+            axios.spread((kindData, listData) => dispatch({
+                type: responseData,
+                payload: {kind: kindData.list, list: listData.list}
+            }))
+        ).catch(error => ToastEle.showToast(error.message));
+    }
+};                                                              //请求首页轮播图、tab、icon、list数据
 const responseData = 'HOME_QUERY_DATA';                         //返回首页轮播图、tab、icon、list数据
 
 const requestList = data => dispatch => apiRequestGoodList(data).then(
@@ -26,6 +30,7 @@ const pushKind = 'HOME_PUSH_KIND';          //进入分类页
 const clickBanner = 'HOME_CLICK_BANNER';    //点击轮播图
 const clickTab = 'HOME_CLICK_TAB';          //Tab数据切换
 const clickIcon = 'HOME_CLICK_ICON';        //点击icon进入专题页面
+const scrollHome = 'HOME_SCROLL';           //记录滚动scrollTop
 
 export {
     requestData,
@@ -38,5 +43,6 @@ export {
     pushKind,
     clickBanner,
     clickTab,
-    clickIcon
+    clickIcon,
+    scrollHome
 };

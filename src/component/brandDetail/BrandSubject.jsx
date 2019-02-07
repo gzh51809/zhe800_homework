@@ -31,7 +31,7 @@ class BrandSubject extends Component {
                         <span>收藏</span>
                     </TouchBox>
                 </div>
-                <h2>
+                <h2 className={Boolean(item.discountType) ? null : base.disappear}>
                     <span>{item.discountType}</span>
                     {item.discount}
                 </h2>

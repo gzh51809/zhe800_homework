@@ -21,7 +21,6 @@ import {
 import {ListContainer, GoodItem1} from '../component/good';
 
 import * as action from '../action/Home';
-import iconfont from "../scss/iconfont.css";
 
 class Home extends Component {
     constructor() {
@@ -63,6 +62,7 @@ class Home extends Component {
             });
         }
 
+        this.props.dispatch({type: action.scrollHome, payload:{scrollTop: event.currentTarget.scrollTop}});
     }
 
     clickAdArea(item) {
@@ -88,6 +88,7 @@ class Home extends Component {
                              ref={'tabbar'}
                              selectTab={item => this.props.history.push(item.id)}
                              scroll={this.scrollSticky}
+                             scrollTop={this.props.scrollTop}
                              needScrollToTop={true}>
                 <TopBar download={() => this.props.dispatch({type: action.downloadApp})}/>
                 <SearchBar clickBar={() => this.props.history.push('/search')}/>

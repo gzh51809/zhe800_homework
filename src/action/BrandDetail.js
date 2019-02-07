@@ -31,6 +31,7 @@ const responseList = 'BRANDDETAIL_QUERY_LIST';          //返回品牌所属商�
 //--------------------同步动作-用户交互--------------------
 const clickTab = 'BRANDDETAIL_CLICK_|TAB';              //点击tab
 const clickItem = 'BRANDDETAIL_CLICK_ITEM';             //点击商品
+const scrollBrandDetail = 'BRANDDETAIL_SCROLL';         //记录滚动scrollTop
 
 export {
     requestData,
@@ -39,5 +40,6 @@ export {
     responseList,
 
     clickTab,
-    clickItem
+    clickItem,
+    scrollBrandDetail
 };

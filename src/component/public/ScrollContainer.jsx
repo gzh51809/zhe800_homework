@@ -70,6 +70,10 @@ class ScrollContainer extends Component {
         }
     }
 
+    componentDidMount() {
+        setTimeout(() => this.refs.scrollContainer.scrollTop = this.props.scrollTop, 0);
+    }
+
     render() {
         let scrollTopTop = this.state.displayScrollToTop && (
             <ScrollToTop className={classNames(base.visible, style.scrollToTop)}
@@ -79,7 +83,10 @@ class ScrollContainer extends Component {
         return (
             <div ref={'scrollContainer'}
                  className={classNames(this.props.direction === 'horizontal' ? style.horizontal : style.vertical, this.props.className)}
-                 onScroll={this.scrollAction}
+                 onScroll={event => {
+                     this.scrollAction(event);
+                     event.stopPropagation();
+                 }}
                  onTouchStart={() => this.timer = clearInterval(this.timer)}>
                 <div ref={'wrapper'}
                      className={this.props.direction === 'horizontal' ? style.horizontalWrapper : style.verticalWrapper}>
@@ -98,14 +105,17 @@ class ScrollContainer extends Component {
 
 ScrollContainer.propTypes = {
     needScrollToTop: PropTypes.bool,
+    scrollTop: PropTypes.number,
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     scroll: PropTypes.func
 };
 
 ScrollContainer.defaultProps = {
     needScrollToTop: false,
+    scrollTop: 0,
     direction: 'vertical',
-    scroll: (() => {})
+    scroll: (() => {
+    })
 };
 
 export default ScrollContainer;
