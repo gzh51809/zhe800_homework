@@ -1,0 +1,47 @@
+.PoperContainer {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); }
+  .PoperContainer > .wrapper {
+    transition: transform 200ms 0ms;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70%;
+    background: white;
+    display: flex;
+    flex-flow: column nowrap; }
+    .PoperContainer > .wrapper > p.top {
+      font-size: 40px;
+      color: #333;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 2px solid #EEE; }
+    .PoperContainer > .wrapper > div.center {
+      flex: 1;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch; }
+    .PoperContainer > .wrapper > p.bottom {
+      background: #ff4654;
+      color: white;
+      font-size: 32px;
+      height: 80px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .PoperContainer > .wrapper > p.active {
+      color: #ff4654;
+      background: white; }
+
+/*# sourceMappingURL=PoperContainer.css.map */

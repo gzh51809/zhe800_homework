@@ -39,10 +39,8 @@ services.interceptors.response.use(
 
             //超时跳转登录，部分接口需要
             if (response.data.code === '2') {
-                response.data.code = '0';
                 //删除token，跳转至登录页
                 localStorage.removeItem('token');
-                location.hash = 'login';
                 return response.data;
             }
 

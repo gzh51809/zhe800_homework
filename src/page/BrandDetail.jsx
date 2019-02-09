@@ -42,7 +42,10 @@ class BrandDetail extends Component {
         let goods = this.props.currentList.map(item => (
             <GoodItem4 key={item.goodId}
                        good={item}
-                       clickItem={() => console.log(item.goodId)}/>
+                       clickItem={() => this.props.history.push({
+                           pathname: 'goodDetail',
+                           search: `goodId=${item.goodId}`
+                       })}/>
         ));
 
         return (
@@ -54,9 +57,12 @@ class BrandDetail extends Component {
                                  })}
                              scrollTop={this.props.scrollTop}>
                 <Header endTime={this.props.brandDetail.endTime}
-                        clickBack={() => this.props.history.goBack()}/>
+                        clickBack={() => {
+                            this.props.dispatch({type: action.brandDetailReset, payload: {}});
+                            this.props.history.goBack();
+                        }}/>
                 <BrandSubject brand={this.props.brandDetail} isCollect={false}/>
-                {goods.length === 0 ?  null : tab}
+                {goods.length === 0 ? null : tab}
                 {
                     goods.length === 0 ? <NoData/> : (
                         <ListContainer ref={'list'}>

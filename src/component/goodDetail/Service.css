@@ -1,0 +1,54 @@
+.Service > div.item {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  border-bottom: 10px solid #EEE; }
+  .Service > div.item > p {
+    width: 10%;
+    font-size: 30px;
+    padding-right: 20px;
+    color: #333; }
+  .Service > div.item > div.itemWrapper {
+    width: 80%;
+    color: #888; }
+    .Service > div.item > div.itemWrapper > span {
+      display: inline-block;
+      font-size: 26px; }
+    .Service > div.item > div.itemWrapper > i {
+      padding: 0 20px;
+      font-size: 26px; }
+  .Service > div.item > i {
+    align-self: center;
+    width: 10%;
+    text-align: center;
+    font-size: 30px;
+    color: #666; }
+.Service div.poperContent {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 2px solid #EEE;
+  padding: 20px; }
+  .Service div.poperContent > span {
+    color: #ff4b7e;
+    font-size: 30px;
+    padding-right: 20px; }
+  .Service div.poperContent > div {
+    flex: 1; }
+    .Service div.poperContent > div > h2 {
+      color: #333;
+      font-size: 28px; }
+    .Service div.poperContent > div > h3 {
+      font-size: 26px;
+      color: #6b6b6b;
+      padding-top: 10px; }
+  .Service div.poperContent > i {
+    color: #CCC;
+    font-size: 30px;
+    padding: 0 0 0 20px; }
+.Service div.active {
+  background: #EEE; }
+
+.active {
+  background: #EEE; }
+
+/*# sourceMappingURL=Service.css.map */

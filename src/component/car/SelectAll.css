@@ -1,0 +1,44 @@
+.SelectAll {
+  height: 80px;
+  display: flex; }
+  .SelectAll > div.left {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .SelectAll > div.left > .selectAll {
+      display: flex;
+      align-items: center;
+      padding: 20px; }
+      .SelectAll > div.left > .selectAll > i {
+        font-size: 34px;
+        color: #666;
+        padding: 10px 20px 10px 0; }
+      .SelectAll > div.left > .selectAll > i.select {
+        color: #db0000; }
+      .SelectAll > div.left > .selectAll > p {
+        font-size: 36px;
+        color: #333; }
+    .SelectAll > div.left > .settleContent {
+      margin-right: 20px; }
+      .SelectAll > div.left > .settleContent > h2 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 5px; }
+        .SelectAll > div.left > .settleContent > h2 > span {
+          color: #db0000; }
+      .SelectAll > div.left > .settleContent > h3 {
+        font-size: 22px;
+        color: #AAA; }
+  .SelectAll > .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    padding: 0 30px;
+    color: white;
+    background: #db0000; }
+  .SelectAll > .active {
+    opacity: 0.5; }
+
+/*# sourceMappingURL=SelectAll.css.map */

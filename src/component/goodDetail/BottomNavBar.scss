@@ -1,0 +1,55 @@
+.BottomNavBar {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  background: #FFF;
+
+  > div.icon {
+    flex: 1;
+    display: flex;
+    border-right: 2px solid #EEE;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    > i {
+      color: #333;
+      margin-bottom: 5px;
+      font-size: 40px;
+    }
+
+    > p {
+      color: #333;
+      font-size: 24px;
+    }
+  }
+
+  > p {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    align-self: stretch;
+  }
+
+  > p.car {
+    background: #FF8259;
+  }
+
+  > p.carActive {
+    background: #c36247;
+  }
+
+  > p.buy {
+    background: #ff4654;
+  }
+
+  > p.buyActive {
+    background: #c3333f;
+  }
+}
+
+.active {
+  opacity: 0.5;
+}

@@ -18,6 +18,10 @@ const requestLogin = require('./requestLogin');
 const requestRegister = require('./requestRegister');
 const requestBrandDetail = require('./requestBrandDetail');
 const requestBrandGoodList = require('./requestBrandGoodList');
+const requestGoodDetail = require('./requestGoodDetail');
+const requestGoodAttribute = require('./requestGoodAttribute');
+const requestAddToCar = require('./requestAddToCar');
+const requestCarInfo = require('./requestCarInfo');
 
 let app = express();
 //某些特殊端口如6000   Google报unsafe_port
@@ -65,3 +69,7 @@ app.use('/zhe800Interface/', requestLogin);
 app.use('/zhe800Interface/', requestRegister);
 app.use('/zhe800Interface/', requestBrandDetail);
 app.use('/zhe800Interface/', requestBrandGoodList);
+app.use('/zhe800Interface/', requestGoodDetail);
+app.use('/zhe800Interface/', requestGoodAttribute);
+app.use('/zhe800Interface/', requestAddToCar);
+app.use('/zhe800Interface/', requestCarInfo);

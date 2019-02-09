@@ -1,9 +1,12 @@
 import {
     responseData,
     clickItem,
-    clickTab
+    clickTab,
+    brandDetailReset,
+    scrollBrandDetail
 } from '../action/BrandDetail';
 import apiConfig from "../api/config";
+import {scrollHome} from "../action/Home";
 
 let defaultState = {
     needData: true,
@@ -52,6 +55,7 @@ function handleData(state, action) {
         return target;
     }, []);
     cloneState.currentList = cloneState.goodList.filter(item => item.kindId === cloneState.selectTab.kindId);
+    cloneState.needData = false;
 
     return cloneState;
 }
@@ -66,6 +70,18 @@ export default (state = defaultState, action) => {
             let cloneState = {...state};
             cloneState.selectTab = action.payload;
             cloneState.currentList = cloneState.goodList.filter(item => item.kindId === cloneState.selectTab.kindId);
+            return cloneState;
+        }
+        case brandDetailReset:
+        {
+            let cloneState = {...state};
+            cloneState.needData = true;
+            return cloneState;
+        }
+        case scrollBrandDetail:
+        {
+            let cloneState = {...state};
+            cloneState.scrollTop = action.payload.scrollTop;
             return cloneState;
         }
         default:

@@ -1,0 +1,120 @@
+.Gallery {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+
+  > div:first-of-type {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    > div {
+      touch-action: pan-x;
+
+      img {
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+      }
+
+      .active {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  > span.back {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  > p.tuwen {
+    box-sizing: border-box;
+    padding: 10px;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    background: #FFF;
+    color: #666;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  > i.nav {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  > div.navLink {
+    position: absolute;
+    background: #5b5b5b;
+    border-radius: 10px;
+    width: 40%;
+    right: 10px;
+    top: 120px;
+
+    > i {
+      position: absolute;
+      display: block;
+      top: -40px;
+      right: 7%;
+      width: 0;
+      height: 0;
+      border: 20px solid transparent;
+      border-bottom-color: #5b5b5b;
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+      color: white;
+      padding: 20px;
+      border-bottom: 1px solid #FFF;
+
+      > i {
+        margin-right: 20px;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      > p {
+        flex: 1;
+        font-size: 26px;
+      }
+    }
+
+    > div:last-of-type {
+      border-bottom: none;
+    }
+  }
+}
+
+.active {
+  opacity: 0.5;
+}

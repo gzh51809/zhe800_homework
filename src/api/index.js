@@ -12,6 +12,10 @@ import requestLogin from './requestLogin';
 import requestRegister from './requestRegister';
 import requestBrandDetail from './requestBrandDetail';
 import requestBrandGoodList from './requestBrandGoodList';
+import requestGoodDetail from './requestGoodDetail';
+import requestGoodAttribute from './requestGoodAttribute';
+import requestAddToCar from './requestAddToCar';
+import requestCarInfo from './requestCarInfo';
 
 export {
     requestKind,
@@ -27,5 +31,9 @@ export {
     requestLogin,
     requestRegister,
     requestBrandDetail,
-    requestBrandGoodList
+    requestBrandGoodList,
+    requestGoodDetail,
+    requestGoodAttribute,
+    requestAddToCar,
+    requestCarInfo
 }

@@ -1,0 +1,201 @@
+.AttributePoper {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+
+  > .wrapper {
+    transition: transform 200ms 0ms;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80%;
+    background: white;
+    display: flex;
+    flex-flow: column nowrap;
+
+    > p.top {
+      font-size: 40px;
+      color: #333;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 2px solid #EEE;
+    }
+
+    > div.center {
+      flex: 1;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 20px 0;
+
+      > div.title {
+        display: flex;
+        padding: 0 20px 20px 20px;
+        border-bottom: 2px solid #EEE;
+
+        > img {
+          display: block;
+          margin-right: 20px;
+          width: 200px;
+          height: 200px;
+          object-fit: cover;
+        }
+
+        > div {
+          flex: 1;
+
+          > * {
+            font-size: 36px;
+            margin-bottom: 20px;
+          }
+
+          > h2 {
+            color: #ff4654;
+          }
+
+          > h3 {
+            color: #333;
+          }
+        }
+
+        > i {
+          align-self: flex-start;
+          padding: 10px;
+          color: #666;
+          font-size: 30px;
+        }
+
+        > i.active {
+          opacity: 0.5;
+        }
+      }
+
+      > div.attribute {
+        padding: 20px 0 0 20px;
+        border-bottom: 2px solid #EEE;
+
+        > p {
+          font-size: 30px;
+          color: #333;
+        }
+
+        > div {
+          display: flex;
+          flex-flow: row wrap;
+          padding-top: 20px;
+
+          > h3 {
+            box-sizing: border-box;
+            padding: 0 20px 20px 0;
+            width: 33.3%;
+
+            > p {
+              font-size: 30px;
+              height: 50px;
+              border: 2px solid #ff4654;
+              color: #ff4654;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            > p.select {
+              background: #ff4654;
+              color: white;
+            }
+          }
+
+          > h3.active {
+            > p {
+              background: #ff4654;
+              color: white;
+            }
+          }
+        }
+      }
+
+      > div.amount {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 2px solid #EEE;
+
+        > p {
+          font-size: 30px;
+          color: #666;
+        }
+
+        > div {
+          display: flex;
+          align-items: center;
+
+          > p {
+            font-size: 38px;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #FFF;
+          }
+
+          > p.active {
+            background: #cbeaff;
+          }
+
+          > span {
+            width: 80px;
+            font-size: 30px;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+
+    }
+
+    > div.bottom {
+      color: white;
+      height: 80px;
+      display: flex;
+
+      > * {
+        font-size: 32px;
+        flex: 1;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      > p.car {
+        background: #FF8259;
+      }
+
+      > p.carActive {
+        background: #c36247;
+      }
+
+      > p.buy {
+        background: #ff4654;
+      }
+
+      > p.buyActive {
+        background: #c3333f;
+      }
+    }
+
+  }
+}

@@ -9,18 +9,19 @@
   height: 100%;
   position: relative;
   overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch; }
+  overflow-y: auto; }
 
 .horizontalWrapper {
   display: flex;
-  flex-flow: row nowrap; }
+  flex-flow: row nowrap;
+  min-width: 100%; }
   .horizontalWrapper > * {
     flex-shrink: 0; }
 
 .verticalWrapper {
   display: flex;
-  flex-flow: column nowrap; }
+  flex-flow: column nowrap;
+  min-height: 100%; }
   .verticalWrapper > * {
     flex-shrink: 0; }
 

@@ -1,0 +1,21 @@
+.GoodAttribute > div.item {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #EEE;
+  padding: 20px; }
+  .GoodAttribute > div.item > p {
+    flex: 1;
+    font-size: 32px;
+    color: #333;
+    height: 48px;
+    display: flex;
+    align-items: center; }
+  .GoodAttribute > div.item > i {
+    text-align: center;
+    width: 10%;
+    font-size: 30px;
+    color: #666; }
+.GoodAttribute > div.active {
+  background: #EEE; }
+
+/*# sourceMappingURL=GoodAttribute.css.map */

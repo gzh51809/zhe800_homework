@@ -11,13 +11,12 @@
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 .horizontalWrapper {
   display: flex;
   flex-flow: row nowrap;
-
+  min-width: 100%;
   > * {
     flex-shrink: 0;
   }
@@ -26,7 +25,7 @@
 .verticalWrapper{
   display: flex;
   flex-flow: column nowrap;
-
+  min-height: 100%;
   > * {
     flex-shrink: 0;
   }

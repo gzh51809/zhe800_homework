@@ -34,6 +34,10 @@ const BrandDetail = Loadable({
     loader: () => import(/* webpackChunkName: "BrandDetail" */ '../page/BrandDetail'),
     loading: Loading
 });
+const GoodDetail = Loadable({
+    loader: () => import(/* webpackChunkName: "GoodDetail" */ '../page/GoodDetail'),
+    loading: Loading
+});
 
 export default (
     <Switch>
@@ -47,6 +51,7 @@ export default (
         <Route key={'setPassword'} path={'/setPassword'} component={SetPassword}/>
         <Route key={'help'} path={'/help'} component={Help}/>
         <Route key={'brandDetail'} path={'/brandDetail'} component={BrandDetail}/>
+        <Route key={'goodDetail'} path={'/goodDetail'} component={GoodDetail}/>
         <Redirect from={'/'} to={'/home'}/>
     </Switch>
 );

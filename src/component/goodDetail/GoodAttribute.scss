@@ -1,0 +1,29 @@
+.GoodAttribute {
+
+  > div.item {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #EEE;
+    padding: 20px;
+
+    > p {
+      flex: 1;
+      font-size: 32px;
+      color: #333;
+      height: 48px;
+      display: flex;
+      align-items: center;
+    }
+
+    > i {
+      text-align: center;
+      width: 10%;
+      font-size: 30px;
+      color: #666;
+    }
+  }
+
+  > div.active {
+    background: #EEE;
+  }
+}

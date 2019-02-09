@@ -1,0 +1,138 @@
+.AttributePoper {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); }
+  .AttributePoper > .wrapper {
+    transition: transform 200ms 0ms;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80%;
+    background: white;
+    display: flex;
+    flex-flow: column nowrap; }
+    .AttributePoper > .wrapper > p.top {
+      font-size: 40px;
+      color: #333;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 2px solid #EEE; }
+    .AttributePoper > .wrapper > div.center {
+      flex: 1;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 20px 0; }
+      .AttributePoper > .wrapper > div.center > div.title {
+        display: flex;
+        padding: 0 20px 20px 20px;
+        border-bottom: 2px solid #EEE; }
+        .AttributePoper > .wrapper > div.center > div.title > img {
+          display: block;
+          margin-right: 20px;
+          width: 200px;
+          height: 200px;
+          object-fit: cover; }
+        .AttributePoper > .wrapper > div.center > div.title > div {
+          flex: 1; }
+          .AttributePoper > .wrapper > div.center > div.title > div > * {
+            font-size: 36px;
+            margin-bottom: 20px; }
+          .AttributePoper > .wrapper > div.center > div.title > div > h2 {
+            color: #ff4654; }
+          .AttributePoper > .wrapper > div.center > div.title > div > h3 {
+            color: #333; }
+        .AttributePoper > .wrapper > div.center > div.title > i {
+          align-self: flex-start;
+          padding: 10px;
+          color: #666;
+          font-size: 30px; }
+        .AttributePoper > .wrapper > div.center > div.title > i.active {
+          opacity: 0.5; }
+      .AttributePoper > .wrapper > div.center > div.attribute {
+        padding: 20px 0 0 20px;
+        border-bottom: 2px solid #EEE; }
+        .AttributePoper > .wrapper > div.center > div.attribute > p {
+          font-size: 30px;
+          color: #333; }
+        .AttributePoper > .wrapper > div.center > div.attribute > div {
+          display: flex;
+          flex-flow: row wrap;
+          padding-top: 20px; }
+          .AttributePoper > .wrapper > div.center > div.attribute > div > h3 {
+            box-sizing: border-box;
+            padding: 0 20px 20px 0;
+            width: 33.3%; }
+            .AttributePoper > .wrapper > div.center > div.attribute > div > h3 > p {
+              font-size: 30px;
+              height: 50px;
+              border: 2px solid #ff4654;
+              color: #ff4654;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+            .AttributePoper > .wrapper > div.center > div.attribute > div > h3 > p.select {
+              background: #ff4654;
+              color: white; }
+          .AttributePoper > .wrapper > div.center > div.attribute > div > h3.active > p {
+            background: #ff4654;
+            color: white; }
+      .AttributePoper > .wrapper > div.center > div.amount {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 2px solid #EEE; }
+        .AttributePoper > .wrapper > div.center > div.amount > p {
+          font-size: 30px;
+          color: #666; }
+        .AttributePoper > .wrapper > div.center > div.amount > div {
+          display: flex;
+          align-items: center; }
+          .AttributePoper > .wrapper > div.center > div.amount > div > p {
+            font-size: 38px;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #FFF; }
+          .AttributePoper > .wrapper > div.center > div.amount > div > p.active {
+            background: #cbeaff; }
+          .AttributePoper > .wrapper > div.center > div.amount > div > span {
+            width: 80px;
+            font-size: 30px;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+    .AttributePoper > .wrapper > div.bottom {
+      color: white;
+      height: 80px;
+      display: flex; }
+      .AttributePoper > .wrapper > div.bottom > * {
+        font-size: 32px;
+        flex: 1;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      .AttributePoper > .wrapper > div.bottom > p.car {
+        background: #FF8259; }
+      .AttributePoper > .wrapper > div.bottom > p.carActive {
+        background: #c36247; }
+      .AttributePoper > .wrapper > div.bottom > p.buy {
+        background: #ff4654; }
+      .AttributePoper > .wrapper > div.bottom > p.buyActive {
+        background: #c3333f; }
+
+/*# sourceMappingURL=AttributePoper.css.map */

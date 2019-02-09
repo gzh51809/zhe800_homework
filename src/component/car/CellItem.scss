@@ -1,0 +1,43 @@
+.CellItem {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  > i {
+    font-size: 34px;
+    color: #666;
+    padding: 10px 20px 10px 0;
+  }
+
+  > i.select {
+    color: #db0000;
+  }
+
+  > img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border: 2px solid #EEE;
+  }
+
+  > div.right {
+    flex: 1;
+    padding: 0 10px;
+    align-self: stretch;
+
+    > h2 {
+      box-sizing: border-box;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      font-size: 28px;
+      color: #333;
+    }
+
+    > h3 {
+
+    }
+  }
+}

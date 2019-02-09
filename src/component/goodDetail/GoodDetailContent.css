@@ -1,0 +1,93 @@
+.GoodDetailContent > div.interval {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e5e5e5;
+  color: #6c6c6c;
+  height: 60px; }
+  .GoodDetailContent > div.interval > * {
+    font-size: 26px; }
+  .GoodDetailContent > div.interval > i {
+    font-size: 36px;
+    margin-right: 20px; }
+  .GoodDetailContent > div.interval > p {
+    margin: 0 30px;
+    background: #6c6c6c;
+    height: 2px;
+    width: 20%; }
+.GoodDetailContent > div.shopkeeper {
+  padding: 20px;
+  background: #f9ffd1; }
+  .GoodDetailContent > div.shopkeeper > h3.title {
+    display: flex;
+    align-items: center;
+    color: #ff2a58;
+    margin-bottom: 20px; }
+    .GoodDetailContent > div.shopkeeper > h3.title > i {
+      font-size: 36px;
+      margin-right: 20px; }
+    .GoodDetailContent > div.shopkeeper > h3.title > p {
+      font-size: 28px; }
+  .GoodDetailContent > div.shopkeeper > div > div {
+    display: flex; }
+    .GoodDetailContent > div.shopkeeper > div > div > * {
+      font-size: 26px;
+      color: #333;
+      line-height: 40px; }
+    .GoodDetailContent > div.shopkeeper > div > div > h2 {
+      flex: 2; }
+    .GoodDetailContent > div.shopkeeper > div > div > h3 {
+      flex: 8; }
+.GoodDetailContent > div.goodParam > h3.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFF;
+  color: #6c6c6c;
+  height: 60px; }
+  .GoodDetailContent > div.goodParam > h3.title > * {
+    font-size: 26px; }
+  .GoodDetailContent > div.goodParam > h3.title > p {
+    margin: 0 30px;
+    background: #6c6c6c;
+    height: 2px;
+    width: 20%; }
+.GoodDetailContent > div.goodParam > div {
+  padding: 0 20px; }
+  .GoodDetailContent > div.goodParam > div > div {
+    display: flex; }
+    .GoodDetailContent > div.goodParam > div > div > * {
+      font-size: 24px;
+      color: #333;
+      padding: 10px 0 10px 20px; }
+    .GoodDetailContent > div.goodParam > div > div > span {
+      flex: 2;
+      background: #d9d9d9; }
+    .GoodDetailContent > div.goodParam > div > div > p {
+      flex: 8; }
+  .GoodDetailContent > div.goodParam > div > div:nth-of-type(odd) > p {
+    background: #EEE; }
+  .GoodDetailContent > div.goodParam > div > div:nth-of-type(even) > p {
+    background: #FFF; }
+.GoodDetailContent > div.goodPic {
+  padding: 10px; }
+  .GoodDetailContent > div.goodPic > h3.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFF;
+    color: #6c6c6c;
+    height: 60px; }
+    .GoodDetailContent > div.goodPic > h3.title > * {
+      font-size: 26px; }
+    .GoodDetailContent > div.goodPic > h3.title > p {
+      margin: 0 30px;
+      background: #6c6c6c;
+      height: 2px;
+      width: 20%; }
+  .GoodDetailContent > div.goodPic > img {
+    display: block;
+    width: 100%;
+    object-fit: cover; }
+
+/*# sourceMappingURL=GoodDetailContent.css.map */

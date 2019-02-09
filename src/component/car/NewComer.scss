@@ -1,0 +1,49 @@
+.NewComer {
+  display: flex;
+  align-items: center;
+  background: #FFF url("../../image/coupon.png") no-repeat center/contain;
+  margin: 20px;
+  padding: 10px 20px;
+
+  > .money {
+    margin: 0 20px;
+    font-size: 50px;
+    color: #333;
+
+    > span {
+      font-size: 30px;
+    }
+  }
+
+  > .center {
+    flex: 1;
+
+    > * {
+      padding: 2px;
+    }
+
+    > h2 {
+      color: #333;
+      font-size: 22px;
+    }
+
+    > h3 {
+      font-size: 20px;
+      color: #AAA;
+    }
+  }
+
+  > p.right {
+    margin-right: 10px;
+    font-size: 26px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #db0000;
+    color: #FFF;
+  }
+
+  > p.active {
+    color: #db0000;
+    background: #FFF;
+  }
+}

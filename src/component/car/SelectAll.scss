@@ -1,0 +1,65 @@
+.SelectAll {
+  height: 80px;
+  display: flex;
+
+  > div.left {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > .selectAll {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+
+      > i {
+        font-size: 34px;
+        color: #666;
+        padding: 10px 20px 10px 0;
+      }
+
+      > i.select {
+        color: #db0000;
+      }
+
+      > p {
+        font-size: 36px;
+        color: #333;
+      }
+    }
+
+    > .settleContent {
+      margin-right: 20px;
+      > h2 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 5px;
+
+        > span {
+          color: #db0000;
+        }
+      }
+
+      > h3 {
+        font-size: 22px;
+        color: #AAA;
+      }
+    }
+  }
+
+  > .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    padding: 0 30px;
+    color: white;
+    background: #db0000;
+  }
+
+  > .active {
+    opacity: 0.5;
+  }
+
+}

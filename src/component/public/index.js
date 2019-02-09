@@ -10,6 +10,7 @@ import TopTab from './TopTab';
 import IconArea from './IconArea';
 import InputBox from './InputBox';
 import SubmitButton from './SubmitButton';
+import PoperContainer from './PoperContainer';
 
 export {
     TopBar,
@@ -24,4 +25,5 @@ export {
     IconArea,
     InputBox,
     SubmitButton,
+    PoperContainer
 }

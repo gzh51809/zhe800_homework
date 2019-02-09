@@ -76,7 +76,13 @@ class SetPassword extends Component {
                                   type: 'mobile',
                                   password: cipher(this.state.password.value)
                               }).then(
-                                  () => this.props.history.push('/')
+                                  data => {
+                                      if (data.code === '2') {
+                                          this.props.history.push('/login');
+                                      } else {
+                                          this.props.history.push('/');
+                                      }
+                                  }
                               ).catch(error => ToastEle.showToast(error.message))
                           }/>
         );

@@ -1,0 +1,39 @@
+.BottomNavBar {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  background: #FFF; }
+  .BottomNavBar > div.icon {
+    flex: 1;
+    display: flex;
+    border-right: 2px solid #EEE;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center; }
+    .BottomNavBar > div.icon > i {
+      color: #333;
+      margin-bottom: 5px;
+      font-size: 40px; }
+    .BottomNavBar > div.icon > p {
+      color: #333;
+      font-size: 24px; }
+  .BottomNavBar > p {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    align-self: stretch; }
+  .BottomNavBar > p.car {
+    background: #FF8259; }
+  .BottomNavBar > p.carActive {
+    background: #c36247; }
+  .BottomNavBar > p.buy {
+    background: #ff4654; }
+  .BottomNavBar > p.buyActive {
+    background: #c3333f; }
+
+.active {
+  opacity: 0.5; }
+
+/*# sourceMappingURL=BottomNavBar.css.map */

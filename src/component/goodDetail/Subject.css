@@ -1,0 +1,54 @@
+.Subject {
+  border-bottom: 10px solid #EEE; }
+  .Subject > div {
+    display: flex;
+    align-items: center;
+    background: #ff4654;
+    padding: 20px; }
+    .Subject > div > div.number {
+      display: flex;
+      box-sizing: border-box;
+      color: white;
+      padding-right: 10px; }
+      .Subject > div > div.number > p {
+        font-size: 50px; }
+        .Subject > div > div.number > p > span {
+          font-size: 34px; }
+        .Subject > div > div.number > p > i {
+          font-size: 32px; }
+    .Subject > div > div.saleAmount {
+      flex: 1;
+      color: white; }
+      .Subject > div > div.saleAmount > span {
+        text-decoration: line-through;
+        font-size: 24px; }
+      .Subject > div > div.saleAmount > p {
+        font-size: 24px; }
+        .Subject > div > div.saleAmount > p > span {
+          padding: 0 5px;
+          background: white;
+          color: #ff4654;
+          border-radius: 5px;
+          margin-left: 10px;
+          font-size: 24px; }
+    .Subject > div > p.timer {
+      flex: 1;
+      text-align: center;
+      font-size: 28px;
+      color: white; }
+  .Subject > p.title {
+    background: white;
+    padding: 20px;
+    font-size: 30px;
+    line-height: 40px;
+    color: #666; }
+    .Subject > p.title > span {
+      background: #ff4654;
+      color: white;
+      margin-right: 10px;
+      border-radius: 5px;
+      padding: 0 10px;
+      font-size: 24px;
+      line-height: 30px; }
+
+/*# sourceMappingURL=Subject.css.map */

@@ -1,0 +1,50 @@
+.GoodParam {
+
+  > div.item {
+    display: flex;
+    align-items: center;
+    border-bottom: 10px solid #EEE;
+    padding: 20px;
+
+    > p {
+      flex: 1;
+      font-size: 32px;
+      color: #333;
+      height: 48px;
+      display: flex;
+      align-items: center;
+    }
+
+    > i {
+      text-align: center;
+      width: 10%;
+      font-size: 30px;
+      color: #666;
+    }
+  }
+
+  > div.active {
+    background: #EEE;
+  }
+
+  div.popContent {
+    >div{
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid #EEE;
+      padding: 20px;
+
+      > span {
+        flex: 1;
+        color: #AAA;
+        font-size: 30px;
+      }
+
+      > p {
+        flex: 3;
+        color: #333;
+        font-size: 30px;
+      }
+    }
+  }
+}

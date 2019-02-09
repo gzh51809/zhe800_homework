@@ -6,6 +6,7 @@ import Brand from './Brand';
 import Car from './Car';
 import My from './My';
 import BrandDetail from './BrandDetail';
+import GoodDetail from './GoodDetail';
 
 export default combineReducers({
     home: Home,
@@ -13,5 +14,6 @@ export default combineReducers({
     brand: Brand,
     car: Car,
     my: My,
-    brandDetail: BrandDetail
+    brandDetail: BrandDetail,
+    goodDetail: GoodDetail
 });

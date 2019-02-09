@@ -1,0 +1,154 @@
+.GoodDetailContent {
+  > div.interval {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e5e5e5;
+    color: #6c6c6c;
+    height: 60px;
+
+    > * {
+      font-size: 26px;
+    }
+
+    > i {
+      font-size: 36px;
+      margin-right: 20px;
+    }
+
+    > p {
+      margin: 0 30px;
+      background: #6c6c6c;
+      height: 2px;
+      width: 20%;
+    }
+  }
+
+  > div.shopkeeper {
+    padding: 20px;
+    background: #f9ffd1;
+
+    > h3.title {
+      display: flex;
+      align-items: center;
+      color: #ff2a58;
+      margin-bottom: 20px;
+
+      > i {
+        font-size: 36px;
+        margin-right: 20px;
+      }
+
+      > p {
+        font-size: 28px;
+      }
+    }
+
+    > div {
+      > div {
+        display: flex;
+
+        > * {
+          font-size: 26px;
+          color: #333;
+          line-height: 40px;
+        }
+
+        > h2 {
+          flex: 2;
+        }
+
+        > h3 {
+          flex: 8;
+        }
+      }
+    }
+
+  }
+
+  > div.goodParam {
+    > h3.title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #FFF;
+      color: #6c6c6c;
+      height: 60px;
+
+      > * {
+        font-size: 26px;
+      }
+
+      > p {
+        margin: 0 30px;
+        background: #6c6c6c;
+        height: 2px;
+        width: 20%;
+      }
+    }
+
+    > div {
+      padding: 0 20px;
+
+      > div {
+        display: flex;
+
+        > * {
+          font-size: 24px;
+          color: #333;
+          padding: 10px 0 10px 20px;
+        }
+
+        > span {
+          flex: 2;
+          background: #d9d9d9;
+        }
+
+        > p {
+          flex: 8;
+        }
+      }
+
+      > div:nth-of-type(odd) {
+        > p {
+          background: #EEE;
+        }
+      }
+
+      > div:nth-of-type(even) {
+        > p {
+          background: #FFF;
+        }
+      }
+    }
+  }
+
+  > div.goodPic {
+    padding: 10px;
+    > h3.title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #FFF;
+      color: #6c6c6c;
+      height: 60px;
+
+      > * {
+        font-size: 26px;
+      }
+
+      > p {
+        margin: 0 30px;
+        background: #6c6c6c;
+        height: 2px;
+        width: 20%;
+      }
+    }
+
+    > img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

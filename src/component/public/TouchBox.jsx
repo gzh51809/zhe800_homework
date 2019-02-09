@@ -137,6 +137,18 @@ class TouchBox extends Component {
                     </a>
                 );
                 break;
+            case 'i':
+                element = (
+                    <i className={Boolean(this.state.theClass) ? this.state.theClass : this.props.className}
+                       style={this.props.style}
+                       onTouchStart={this.touchStart}
+                       onTouchMove={this.touchMove}
+                       onTouchEnd={this.touchEnd}
+                       onTouchCancel={this.touchCancel}>
+                        {this.props.children}
+                    </i>
+                );
+                break;
         }
 
 
@@ -156,7 +168,7 @@ class TouchBox extends Component {
  * 在active时，通过类选择器，选中包裹元素的样式，发生active变化
  */
 TouchBox.propTypes = {
-    tagName: PropTypes.oneOf(['div', 'p', 'span', 'h3', 'h4', 'h5', 'a']),
+    tagName: PropTypes.oneOf(['div', 'p', 'span', 'h3', 'h4', 'h5', 'a', 'i']),
     tab: PropTypes.func,
     activeClass: PropTypes.string
 };
