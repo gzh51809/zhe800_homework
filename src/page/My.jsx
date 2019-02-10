@@ -13,6 +13,10 @@ import {
 } from '../component/my'
 
 class My extends Component {
+    componentWillMount() {
+        this.props.dispatch(action.requestData());
+    }
+
     render() {
         let cells = this.props.config.map(item => {
             switch (item.type) {
@@ -36,7 +40,12 @@ class My extends Component {
                              tabs={this.props.tabs}
                              selectTab={(item) => this.props.history.push(item.id)}>
                 <Header clickLogin={() => this.props.history.push('/login')}
-                        clickRegister={() => this.props.history.push('/login')}/>
+                        clickRegister={() => this.props.history.push('/login')}
+                        clickLogout={() => {
+                            localStorage.removeItem('token');
+                            this.props.dispatch(action.requestData());
+                        }}
+                        user={this.props.user}/>
                 {cells}
             </TabBarContainer>
         );

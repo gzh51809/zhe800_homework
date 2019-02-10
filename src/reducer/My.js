@@ -1,9 +1,13 @@
 import {
     clickIcon,
     clickItem,
+    responseData,
 } from '../action/My';
 
 let defaultState = {
+    user: {
+        mobile: ''
+    },
     tabs: [
         {id: 'home', icon: "icon-jinritemai", name: '今日特卖'},
         {id: 'discount', icon: "icon-taotejia", name: '淘特价'},
@@ -33,6 +37,13 @@ let defaultState = {
 
 export default (state = defaultState, action) => {
     switch (action.type) {
+        case responseData:
+        {
+            let cloneState = {...state};
+            cloneState.user.mobile = action.payload.mobile;
+            cloneState.user = Object.assign({}, cloneState.user);
+            return cloneState;
+        }
         case clickIcon:
             return {...state};
         case clickItem:

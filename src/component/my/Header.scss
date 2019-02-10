@@ -6,7 +6,7 @@
     background: transparent;
     border: none;
 
-    > p {
+    > p, span {
       font-weight: 600;
       color: white;
     }
@@ -43,5 +43,39 @@
         opacity: 0.5;
       }
     }
+  }
+
+  > div.userInfo {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+
+    > div.left {
+      flex: 1;
+
+      > h2 {
+        text-align: left;
+        font-size: 36px;
+        color: white;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      > p {
+        text-align: left;
+        font-size: 24px;
+        color: white;
+        font-weight: 600;
+      }
+    }
+
+    > i {
+      font-size: 30px;
+      color: white;
+    }
+  }
+
+  > div.active {
+    opacity: 0.5;
   }
 }

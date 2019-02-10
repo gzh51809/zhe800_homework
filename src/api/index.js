@@ -18,6 +18,7 @@ import requestAddToCar from './requestAddToCar';
 import requestCarInfo from './requestCarInfo';
 import requestUpdateCarInfo from './requestUpdateCarInfo';
 import requestDeleteCarInfo from './requestDeleteCarInfo';
+import requestUserInfo from './requestUserInfo';
 
 export {
     requestKind,
@@ -39,5 +40,6 @@ export {
     requestAddToCar,
     requestCarInfo,
     requestUpdateCarInfo,
-    requestDeleteCarInfo
+    requestDeleteCarInfo,
+    requestUserInfo
 }

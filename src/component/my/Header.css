@@ -4,7 +4,7 @@
   .Header .UIHeader {
     background: transparent;
     border: none; }
-    .Header .UIHeader > p {
+    .Header .UIHeader > p, .Header .UIHeader span {
       font-weight: 600;
       color: white; }
   .Header > div.buttonContainer {
@@ -30,5 +30,27 @@
         padding: 20px; }
       .Header > div.buttonContainer > div.loginReg > .active {
         opacity: 0.5; }
+  .Header > div.userInfo {
+    padding: 30px;
+    display: flex;
+    align-items: center; }
+    .Header > div.userInfo > div.left {
+      flex: 1; }
+      .Header > div.userInfo > div.left > h2 {
+        text-align: left;
+        font-size: 36px;
+        color: white;
+        margin-bottom: 10px;
+        font-weight: 600; }
+      .Header > div.userInfo > div.left > p {
+        text-align: left;
+        font-size: 24px;
+        color: white;
+        font-weight: 600; }
+    .Header > div.userInfo > i {
+      font-size: 30px;
+      color: white; }
+  .Header > div.active {
+    opacity: 0.5; }
 
 /*# sourceMappingURL=Header.css.map */
