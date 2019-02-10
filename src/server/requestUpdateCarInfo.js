@@ -2,10 +2,11 @@ const express = require('express');
 let router = express.Router();
 const bodyParser = require('body-parser');
 const {responseSuccess, responseError, responseTokenInvalid} = require('./validate');
-const {connect, find} = require('./mongoDB');
+const {connect, find, updateOne} = require('./mongoDB');
 const {decryptToken, judgeToken} = require('./crypto');
+const {ObjectId} = require('mongodb');
 
-router.post('/requestCarInfo', bodyParser.json(), async (request, response) => {
+router.post('/requestUpdateCarInfo', bodyParser.json(), async (request, response) => {
     let database = null;
     let query = {
         mobile: decryptToken({token: request.headers.authorization}).mobile,
@@ -33,8 +34,28 @@ router.post('/requestCarInfo', bodyParser.json(), async (request, response) => {
             return;
         }
 
-        result = await find({collection: database.db('zhe800').collection('car'), query: {mobile: query.mobile}});
-        response.send({...responseSuccess(), ...{list: result}});
+        result = await find({
+            collection: database.db('zhe800').collection('car'),
+            query: {_id: ObjectId(request.body._id)}
+        });
+        if (result.length === 1) {
+            result = await updateOne({
+                collection: database.db('zhe800').collection('car'),
+                query: {_id: ObjectId(request.body._id)},
+                update: {
+                    $set: {
+                        buyAmount: request.body.buyAmount,
+                        attribute: request.body.attribute,
+                        attributeName: request.body.attributeName
+                    }
+                }
+            });
+            if (result.modifiedCount === 1) {
+                response.send(responseSuccess());
+                return;
+            }
+        }
+        response.send(responseError());
     } catch (error) {
         response.send({...responseError(), ...{message: error.description}});
     } finally {

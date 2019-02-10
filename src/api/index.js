@@ -16,6 +16,8 @@ import requestGoodDetail from './requestGoodDetail';
 import requestGoodAttribute from './requestGoodAttribute';
 import requestAddToCar from './requestAddToCar';
 import requestCarInfo from './requestCarInfo';
+import requestUpdateCarInfo from './requestUpdateCarInfo';
+import requestDeleteCarInfo from './requestDeleteCarInfo';
 
 export {
     requestKind,
@@ -35,5 +37,7 @@ export {
     requestGoodDetail,
     requestGoodAttribute,
     requestAddToCar,
-    requestCarInfo
+    requestCarInfo,
+    requestUpdateCarInfo,
+    requestDeleteCarInfo
 }

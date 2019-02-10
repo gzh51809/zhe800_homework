@@ -108,7 +108,7 @@ class ScrollContainer extends Component {
     }
 
     componentDidMount() {
-        setTimeout(() => this.refs.scrollContainer.scrollTop = this.props.scrollTop, 0);
+        setTimeout(() => this.refs.scrollContainer && (this.refs.scrollContainer.scrollTop = this.props.scrollTop), 0);
     }
 
     render() {
@@ -157,8 +157,7 @@ ScrollContainer.defaultProps = {
     needScrollToTop: false,
     scrollTop: 0,
     direction: 'vertical',
-    scroll: (() => {
-    })
+    scroll: (() => {})
 };
 
 export default ScrollContainer;

@@ -80,7 +80,7 @@ class Login extends Component {
     clickHeaderAction(item) {
         switch (item.id) {
             case 'back':
-                this.props.history.goBack();
+                this.props.history.push('/home');
                 break;
             case 'help':
                 this.props.history.push('/help');

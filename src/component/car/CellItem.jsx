@@ -15,15 +15,42 @@ class CellItem extends Component {
 
         return (
             <div className={style.CellItem}>
-                <TouchBox tagName={'i'}
-                          tab={() => this.props.selectGood(this.props.good)}
-                          className={good.select ? classNames(icon["icon-quanxuanze"], style.select) : icon["icon-weiquanxuanze"]}/>
-                <img src="https://z2.tuanimg.com/imagev2/trade/800x800.ba05b28b68d0d5be6fe6c06f1f549cd0.400x.jpg" alt="加载失败"/>
+                <TouchBox tagName={'p'}
+                          tab={() => this.props.selectGood(this.props.good)}>
+                    <i className={good.select ? classNames(icon["icon-quanxuanze"], style.select) : icon["icon-weiquanxuanze"]}></i>
+                </TouchBox>
+                <img src={good.fengmianSrc} alt="加载失败"/>
                 <div className={style.right}>
-                    <h2>芊艺白色v领长袖t恤女2019春秋装新款小清新喇叭袖上衣打底衫9259</h2>
-                    <TouchBox tab={() => console.log('显示属性选择框')}>
-                        颜色：SR561女士 尺码：M
-                    </TouchBox>
+                    <div className={style.top}>
+                        <h2>{good.title}</h2>
+                        <TouchBox tagName={'h3'}
+                                  activeClass={this.props.edit ? style.active : null}
+                                  tab={() => this.props.edit && this.props.selectAttribute(this.props.good)}>
+                            <div className={this.props.edit ? style.edit : style.default}>
+                                <p>{good.attributeName}</p>
+                                <i className={icon["icon-jiantou-xia"]}></i>
+                            </div>
+                        </TouchBox>
+                    </div>
+                    <div className={style.price}>
+                        <div className={style.left}>
+                            <h2><span>¥</span>{good.price}</h2>
+                            <h3>¥{good.originPrice}</h3>
+                        </div>
+                        <div className={style.right}>
+                            <TouchBox tagName={'i'}
+                                      tab={() => this.props.minusAmount()}
+                                      activeClass={style.active}>
+                                -
+                            </TouchBox>
+                            <span>{good.buyAmount}</span>
+                            <TouchBox tagName={'i'}
+                                      tab={() => this.props.addAmount()}
+                                      activeClass={style.active}>
+                                +
+                            </TouchBox>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
@@ -31,21 +58,30 @@ class CellItem extends Component {
 }
 
 CellItem.propTypes = {
+    edit: PropTypes.bool,
     good: PropTypes.shape({
+        fengmianSrc: PropTypes.string,
         goodId: PropTypes.string,
         buyAmount: PropTypes.string,
+        price: PropTypes.string,
+        originPrice: PropTypes.string,
+        title: PropTypes.string,
+        attributeName: PropTypes.string,
         select: PropTypes.bool
     }),
-    attribute: PropTypes.arrayOf(PropTypes.shape({
-
-    })),
-    selectGood: PropTypes.func
+    selectGood: PropTypes.func,
+    selectAttribute: PropTypes.func,
+    addAmount: PropTypes.func,
+    minusAmount: PropTypes.func
 };
 
 CellItem.defaultProps = {
+    edit: false,
     good: {},
-    attribute: [],
-    selectGood: () => {}
+    selectGood: () => {},
+    selectAttribute: () => {},
+    addAmount: () => {},
+    minusAmount: () => {}
 };
 
 export default CellItem;

@@ -49,10 +49,19 @@ class GoodDetail extends Component {
                 .map(item => item._id)
                 .join('|');
 
+            let attributeName = this.props.goodAttribute
+                .filter(json => json.select)
+                .map(item => `${item.name}：${item.attributeName}`)
+                .join(' ');
+
             let query = {
                 goodId: this.props.goodAttribute[0].goodId,
                 buyAmount: this.props.buyAmount,
-                attribute: attribute
+                price: this.props.goodDetail.price,
+                originPrice: this.props.goodDetail.originPrice,
+                title: this.props.goodDetail.title,
+                attribute: attribute,
+                attributeName: attributeName
             };
             requestAddToCar(query).then(
                 data => {

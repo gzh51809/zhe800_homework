@@ -2,11 +2,11 @@
   display: flex;
   align-items: center;
   padding: 20px; }
-  .CellItem > i {
+  .CellItem > p > i {
     font-size: 34px;
     color: #666;
     padding: 10px 20px 10px 0; }
-  .CellItem > i.select {
+  .CellItem > p > i.select {
     color: #db0000; }
   .CellItem > img {
     display: block;
@@ -17,8 +17,12 @@
   .CellItem > div.right {
     flex: 1;
     padding: 0 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
     align-self: stretch; }
-    .CellItem > div.right > h2 {
+    .CellItem > div.right > div.top > h2 {
+      padding: 0 10px;
       box-sizing: border-box;
       display: -webkit-box;
       overflow: hidden;
@@ -26,5 +30,72 @@
       -webkit-line-clamp: 2;
       font-size: 28px;
       color: #333; }
+    .CellItem > div.right > div.top > h3 > div.default {
+      margin: 10px 0;
+      padding: 0 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .CellItem > div.right > div.top > h3 > div.default > p {
+        font-size: 26px;
+        color: #666; }
+      .CellItem > div.right > div.top > h3 > div.default > i {
+        visibility: hidden;
+        font-size: 28px;
+        color: #333; }
+    .CellItem > div.right > div.top > h3 > div.edit {
+      margin: 5px 0;
+      padding: 5px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #DDD; }
+      .CellItem > div.right > div.top > h3 > div.edit > p {
+        font-size: 26px;
+        color: #333; }
+      .CellItem > div.right > div.top > h3 > div.edit > i {
+        font-size: 28px;
+        color: #333; }
+    .CellItem > div.right > div.top > h3.active > div {
+      background: #CCC; }
+    .CellItem > div.right > div.price {
+      padding: 0 10px;
+      display: flex;
+      justify-content: space-between; }
+      .CellItem > div.right > div.price > div.left {
+        display: flex;
+        align-items: flex-end; }
+        .CellItem > div.right > div.price > div.left > h2 {
+          margin-right: 10px;
+          font-size: 30px;
+          color: #db0000; }
+          .CellItem > div.right > div.price > div.left > h2 > span {
+            font-size: 26px; }
+        .CellItem > div.right > div.price > div.left > h3 {
+          font-size: 26px;
+          color: #AAA;
+          text-decoration: line-through; }
+      .CellItem > div.right > div.price > div.right {
+        display: flex;
+        border: 2px solid #EEE; }
+        .CellItem > div.right > div.price > div.right > i {
+          width: 40px;
+          height: 40px;
+          font-size: 32px;
+          color: #333;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+        .CellItem > div.right > div.price > div.right > span {
+          border-left: 2px solid #EEE;
+          border-right: 2px solid #EEE;
+          width: 60px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 28px;
+          color: #333; }
+        .CellItem > div.right > div.price > div.right > i.active {
+          background: #EEE; }
 
 /*# sourceMappingURL=CellItem.css.map */

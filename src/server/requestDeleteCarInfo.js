@@ -2,10 +2,11 @@ const express = require('express');
 let router = express.Router();
 const bodyParser = require('body-parser');
 const {responseSuccess, responseError, responseTokenInvalid} = require('./validate');
-const {connect, find} = require('./mongoDB');
+const {connect, find, deleteOne} = require('./mongoDB');
 const {decryptToken, judgeToken} = require('./crypto');
+const {ObjectId} = require('mongodb');
 
-router.post('/requestCarInfo', bodyParser.json(), async (request, response) => {
+router.post('/requestDeleteCarInfo', bodyParser.json(), async (request, response) => {
     let database = null;
     let query = {
         mobile: decryptToken({token: request.headers.authorization}).mobile,
@@ -33,8 +34,18 @@ router.post('/requestCarInfo', bodyParser.json(), async (request, response) => {
             return;
         }
 
-        result = await find({collection: database.db('zhe800').collection('car'), query: {mobile: query.mobile}});
-        response.send({...responseSuccess(), ...{list: result}});
+        for (let i = 0; i < request.body.list.length; i++) {
+            let member = request.body.list[i];
+            result = await deleteOne({
+                collection: database.db('zhe800').collection('car'),
+                query: {_id: ObjectId(member._id)}
+            });
+            if (result.deletedCount !== 1) {
+                response.send(responseError());
+                return;
+            }
+        }
+        response.send(responseSuccess());
     } catch (error) {
         response.send({...responseError(), ...{message: error.description}});
     } finally {

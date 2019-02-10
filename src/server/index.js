@@ -22,6 +22,8 @@ const requestGoodDetail = require('./requestGoodDetail');
 const requestGoodAttribute = require('./requestGoodAttribute');
 const requestAddToCar = require('./requestAddToCar');
 const requestCarInfo = require('./requestCarInfo');
+const requestUpdateCarInfo = require('./requestUpdateCarInfo');
+const requestDeleteCarInfo = require('./requestDeleteCarInfo');
 
 let app = express();
 //某些特殊端口如6000   Google报unsafe_port
@@ -73,3 +75,5 @@ app.use('/zhe800Interface/', requestGoodDetail);
 app.use('/zhe800Interface/', requestGoodAttribute);
 app.use('/zhe800Interface/', requestAddToCar);
 app.use('/zhe800Interface/', requestCarInfo);
+app.use('/zhe800Interface/', requestUpdateCarInfo);
+app.use('/zhe800Interface/', requestDeleteCarInfo);
